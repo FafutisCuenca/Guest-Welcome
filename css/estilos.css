@@ -411,3 +411,51 @@ footer {
     gap: 8px;
   }
 }
+
+
+/* Fechas de llegada y salida */
+.stay-dates-detail {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.stay-date-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 145px;
+  padding: 16px 22px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(54, 94, 89, 0.18);
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+.stay-date-item span {
+  color: #365e59;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 7px;
+}
+
+.stay-date-item strong {
+  color: #263f3b;
+  font-size: 1.25rem;
+  text-transform: capitalize;
+}
+
+.stay-duration {
+  flex-basis: 100%;
+  text-align: center;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 10px;
+}
