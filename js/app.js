@@ -132,13 +132,69 @@ if (h) {
     `${saludo}, ${h}! Disfruten nuestra casa. Esperamos que vivan una experiencia inolvidable.`;
 }
 
-    const f = params.get("llegada");
+    const llegada = params.get("llegada");
+const salida = params.get("salida");
 
-    if (f) {
-      $("fechasEstancia").textContent =
-        "Llegada: " + f +
-        (params.get("salida") ? " · Salida: " + params.get("salida") : "");
+const fechas = $("fechasEstancia");
+fechas.replaceChildren();
+
+function fechaBonita(valor) {
+  const partes = valor.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!partes) return null;
+
+  const fecha = new Date(
+    Date.UTC(Number(partes[1]), Number(partes[2]) - 1, Number(partes[3]), 12)
+  );
+
+  return {
+    fecha,
+    texto: fecha.toLocaleDateString("es-MX", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+      timeZone: "UTC"
+    })
+  };
+}
+
+const fechaLlegada = llegada ? fechaBonita(llegada) : null;
+const fechaSalida = salida ? fechaBonita(salida) : null;
+
+if (fechaLlegada || fechaSalida) {
+  fechas.className = "stay-dates stay-dates-detail";
+
+  function agregarFecha(titulo, dato) {
+    if (!dato) return;
+
+    const tarjeta = document.createElement("div");
+    tarjeta.className = "stay-date-item";
+
+    const etiqueta = document.createElement("span");
+    etiqueta.textContent = titulo;
+
+    const valor = document.createElement("strong");
+    valor.textContent = dato.texto;
+
+    tarjeta.append(etiqueta, valor);
+    fechas.append(tarjeta);
+  }
+
+  agregarFecha("LLEGADA", fechaLlegada);
+  agregarFecha("SALIDA", fechaSalida);
+
+  if (fechaLlegada && fechaSalida) {
+    const dias = Math.round(
+      (fechaSalida.fecha - fechaLlegada.fecha) / 86400000
+    );
+
+    if (dias >= 0) {
+      const total = document.createElement("div");
+      total.className = "stay-duration";
+      total.textContent = `${dias} ${dias === 1 ? "día" : "días"} de estancia`;
+      fechas.append(total);
     }
+  }
+}
 
     crearMenu(d.secciones || []);
 
