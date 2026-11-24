@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administración | Guest Welcome</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <style>
+    body { padding: 25px; }
+    .admin-panel {
+      max-width: 950px;
+      margin: 30px auto;
+      background: white;
+      padding: 28px;
+      border-radius: 12px;
+    }
+    textarea {
+      width: 100%;
+      min-height: 550px;
+      padding: 15px;
+      font-family: monospace;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      resize: vertical;
+    }
+    .admin-button {
+      padding: 13px 20px;
+      margin: 10px 8px 10px 0;
+      border: 0;
+      border-radius: 7px;
+      background: #142b40;
+      color: white;
+      cursor: pointer;
+    }
+    .admin-button:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+    #estado { margin-top: 15px; }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-icon">GW</span>
+      GUEST WELCOME
+    </div>
+    <span>Panel administrativo</span>
+  </header>
+
+  <main class="admin-panel">
+    <span class="eyebrow">ADMINISTRACIÓN DEL ALOJAMIENTO</span>
+    <h1>Editar información</h1>
+
+    <p>
+      Modifica la información del alojamiento en el editor.
+      Después descarga el archivo actualizado y reemplaza
+      alojamiento.json en GitHub.
+    </p>
+
+    <button class="admin-button" id="cargar">
+      Cargar información
+    </button>
+
+    <button class="admin-button" id="validar">
+      Validar información
+    </button>
+
+    <button class="admin-button" id="descargar">
+      Descargar JSON actualizado
+    </button>
+
+    <textarea id="editor" spellcheck="false"
+      aria-label="Información JSON del alojamiento"></textarea>
+
+    <p id="estado" role="status">
+      Esperando carga de información.
+    </p>
+
+    <a href="index.html">Volver a la pantalla principal</a>
+  </main>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
