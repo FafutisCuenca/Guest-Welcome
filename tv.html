@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#142c2a">
+  <title>Nuestra Casa · Guía para TV</title>
+  <link rel="stylesheet" href="css/tv.css">
+</head>
+<body>
+  <div class="tv-app">
+
+    <header class="tv-header">
+      <div class="tv-brand">
+        <span class="tv-brand-icon">⌂</span>
+        <div>
+          <div class="tv-brand-name" id="nombreCasa">NUESTRA CASA</div>
+          <div class="tv-brand-subtitle">GUÍA PARA HUÉSPEDES</div>
+        </div>
+      </div>
+
+      <div class="tv-clock-area">
+        <div id="reloj" class="tv-clock">--:--</div>
+        <div id="fechaActual" class="tv-current-date"></div>
+      </div>
+    </header>
+
+    <main>
+      <section class="tv-welcome">
+        <div class="tv-welcome-photo" id="fotoBienvenida"></div>
+
+        <div class="tv-welcome-content">
+          <div class="tv-eyebrow">BIENVENIDOS</div>
+          <h1 id="saludo">¡Bienvenidos a nuestra casa!</h1>
+          <p id="mensajeBienvenida">
+            Deseamos que disfruten cada momento de su estancia.
+          </p>
+          <div id="datosEstancia" class="tv-stay-info"></div>
+          <p id="mensajeFinal" class="tv-final-message"></p>
+        </div>
+      </section>
+
+      <section class="tv-menu-section">
+        <div class="tv-section-heading">
+          <div>
+            <div class="tv-eyebrow">TODO LO QUE NECESITAS</div>
+            <h2>Conoce nuestra casa</h2>
+          </div>
+          <p>Selecciona una opción para consultar la información</p>
+        </div>
+
+        <div id="menuSecciones" class="tv-menu-grid">
+          <div class="tv-loading">Cargando la guía...</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="tv-footer">
+      <span>Gracias por elegir nuestra casa</span>
+      <span class="tv-controls-help">
+        <span>↑ ↓ ← →</span> Navegar
+        <span>OK</span> Seleccionar
+        <span>ATRÁS</span> Regresar
+      </span>
+    </footer>
+
+  </div>
+
+  <div id="modalSeccion" class="tv-modal" aria-hidden="true">
+    <div class="tv-modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
+      <div class="tv-modal-header">
+        <div>
+          <div class="tv-eyebrow">INFORMACIÓN PARA HUÉSPEDES</div>
+          <h2 id="modalTitulo">Información</h2>
+        </div>
+        <button type="button" id="cerrarModal" class="tv-close" aria-label="Cerrar">
+          ✕
+        </button>
+      </div>
+
+      <div id="modalContenido" class="tv-modal-content" tabindex="0"></div>
+
+      <div class="tv-modal-footer">
+        <span>Utiliza las flechas para desplazarte por la información</span>
+        <span>ATRÁS para regresar al menú</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/tv.js"></script>
+</body>
+</html>
