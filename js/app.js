@@ -121,12 +121,16 @@ async function iniciar() {
       $("fotoAnfitriona").src = d.anfitriona.foto;
     }
 
-    const h = params.get("huesped");
+const h = params.get("huesped");
 
-    if (h) {
-      $("mensajeBienvenida").textContent =
-        `¡Bienvenido${params.get("plural") === "1" ? "s" : ""}, ${h}! ${d.mensajeBienvenida}`;
-    }
+if (h) {
+  const saludo = params.get("plural") === "1"
+    ? "¡Bienvenidos"
+    : "¡Bienvenido";
+
+  $("mensajeBienvenida").textContent =
+    `${saludo}, ${h}! Disfruten nuestra casa. Esperamos que vivan una experiencia inolvidable.`;
+}
 
     const f = params.get("llegada");
 
