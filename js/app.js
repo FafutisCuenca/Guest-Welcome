@@ -172,8 +172,10 @@ function mostrar(s) {
 
   // Galería de fotografías.
   if (s.imagenes?.length) {
-    const g = document.createElement("div");
-    g.className = "gallery";
+const g = document.createElement("div");
+g.className = s.id === "wifi"
+  ? "gallery wifi-gallery"
+  : "gallery";
 
     s.imagenes.forEach(im => {
       const el = document.createElement("img");
