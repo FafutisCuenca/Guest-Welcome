@@ -1,75 +1,8 @@
-
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#142b40">
-  <title>Guest Welcome | Bienvenido</title>
-  <link rel="stylesheet" href="css/estilos.css">
-</head>
-<body>
-
-  <header class="topbar">
-    <div class="brand">
-      <span class="brand-icon">GW</span>
-      <span id="nombreAlojamiento">GUEST WELCOME</span>
-    </div>
-    <div id="reloj" class="clock"></div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="hero-content">
-        <span class="eyebrow">ES UN PLACER RECIBIRTE</span>
-        <h1>¡Bienvenido<span id="saludoPlural"></span>, <span id="nombreHuesped">huésped</span>!</h1>
-        <p id="mensajeBienvenida">
-          Esperamos que disfrutes una estancia maravillosa.
-        </p>
-        <div class="stay-dates" id="fechasEstancia"></div>
-      </div>
-      <div class="hero-photo" id="fotoPrincipal"></div>
-    </section>
-
-    <section class="section">
-      <div class="section-heading">
-        <span class="eyebrow">TODO LO QUE NECESITAS</span>
-        <h2>Descubre tu alojamiento</h2>
-        <p>Selecciona una opción para consultar la información.</p>
-      </div>
-
-      <div class="menu-grid" id="menuPrincipal"></div>
-    </section>
-
-    <section class="welcome-note">
-      <div>
-        <span class="eyebrow">ESTAMOS PARA AYUDARTE</span>
-        <h2>Disfruta tu estancia</h2>
-        <p id="mensajeFinal">
-          Si necesitas ayuda, estamos a tu disposición.
-        </p>
-      </div>
-      <a id="contactoWhatsApp" class="contact-button"
-         href="#" target="_blank" rel="noopener">
-        Contactar al anfitrión
-      </a>
-    </section>
-  </main>
-
-  <footer>
-    <span id="pieAlojamiento">GUEST WELCOME</span>
-    <span>Tu estancia comienza aquí.</span>
-  </footer>
-
-  <div id="modal" class="modal" aria-hidden="true">
-    <div class="modal-content">
-      <button id="cerrarModal" class="close-button" aria-label="Cerrar">×</button>
-      <span class="eyebrow">GUÍA DEL HUÉSPED</span>
-      <h2 id="modalTitulo"></h2>
-      <div id="modalContenido"></div>
-    </div>
-  </div>
-
-  <script src="js/app.js"></script>
-</body>
-</html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#365e59"><title>Nuestra Casa | Guest Welcome</title><link rel="stylesheet" href="css/estilos.css"></head>
+<body><header class="topbar"><a class="brand" href="index.html"><span class="brand-icon">⌂</span><span id="nombreAlojamiento">NUESTRA CASA</span></a><div id="reloj" class="clock"></div></header>
+<main><section class="hero"><div class="hero-content"><span class="eyebrow">CUERNAVACA · MORELOS</span><h1>¡Bienvenidos a nuestra casa!</h1><p id="mensajeBienvenida">Disfruten nuestra casa.</p><div class="stay-dates" id="fechasEstancia"></div><p class="subtitulo" id="subtitulo"></p></div><div class="hero-photo" id="fotoPrincipal"></div></section>
+<section class="section"><div class="section-heading"><span class="eyebrow">GUÍA PARA TU ESTANCIA</span><h2>Todo lo que necesitas saber</h2><p>Selecciona una sección para consultar la información y fotografías.</p></div><div class="menu-grid" id="menuPrincipal"></div></section>
+<section class="host"><img id="fotoAnfitriona" src="img/alojamiento/image3.png" alt="Anfitriona Ale"><div><span class="eyebrow">ESTAMOS PARA RECIBIRTE</span><h2>¡Soy Ale!</h2><p id="mensajeFinal"></p><p><strong>Anfitriona:</strong> Alexandra Cuenca<br><strong>Coanfitriona:</strong> Teresita Castillo</p><a id="contactoWhatsApp" class="contact-button" href="https://wa.me/525538124380" target="_blank" rel="noopener">Contactar por WhatsApp</a></div></section></main>
+<footer><span>NUESTRA CASA · CUERNAVACA, MOR.</span><span>GUEST WELCOME</span></footer>
+<div id="modal" class="modal" aria-hidden="true"><div class="modal-content"><button id="cerrarModal" class="close-button" aria-label="Cerrar">×</button><span class="eyebrow">GUÍA DE NUESTRA CASA</span><h2 id="modalTitulo"></h2><div id="modalContenido"></div></div></div><script src="js/app.js"></script></body></html>
