@@ -114,13 +114,15 @@ button {
   background: rgba(255, 255, 255, 0.07);
 }
 
+
 .tv-welcome-photo {
   min-height: 285px;
-  background:
-    linear-gradient(90deg, transparent, rgba(20, 44, 42, 0.12)),
-    center / cover no-repeat;
-  background-color: #31564c;
+  background-color: #142c2a;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
+
 
 .tv-welcome-content {
   padding: 28px 38px;
