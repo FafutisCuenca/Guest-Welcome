@@ -1,3 +1,4 @@
+
 {
   "nombre": "NUESTRA CASA · CUERNAVACA",
   "subtitulo": "Casa familiar en privada para descanso de fin de semana · Cuernavaca, Mor.",
@@ -101,6 +102,16 @@
           "src": "img/alojamiento/image8.png",
           "alt": "Fotografías originales de la sala y comedor"
         }
+      ]
+    },
+    {
+      "id": "wifi",
+      "icono": "📶",
+      "titulo": "Conexión Wi-Fi",
+      "descripcion": "Conéctate a Internet durante tu estancia.",
+      "contenido": [
+        "NOMBRE DE LA RED: INFINITUMAAFA",
+        "CONTRASEÑA: Por seguridad, solicítala directamente a la anfitriona o consulta el código QR que se encuentra en el interior de la casa."
       ]
     },
     {
