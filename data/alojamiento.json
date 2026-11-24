@@ -107,6 +107,48 @@
       ]
     },
     {
+  "id": "sitios-interes",
+  "icono": "📍",
+  "titulo": "Sitios de interés",
+  "descripcion": "Conoce algunos lugares cercanos para hacer compras, salir a comer o disfrutar de Jiutepec y sus alrededores.",
+  "contenido": [
+    "REFERENCIAS DE LA ZONA",
+    "Ex Hacienda de Cortés: uno de los principales referentes históricos de la zona. Se encuentra aproximadamente a 500 metros de nuestra casa, de acuerdo con la referencia de ubicación proporcionada.",
+    "Hotel Camino Real Sumiya: un sitio emblemático de arquitectura y jardines de inspiración japonesa, ubicado en Jiutepec. El acceso a sus instalaciones está sujeto a las condiciones del establecimiento.",
+    "Centro de Jiutepec: puedes visitar el Zócalo y el Ex Convento de Santiago Apóstol, una construcción histórica del siglo XVI.",
+    "PLAZAS Y CENTROS COMERCIALES",
+"Plaza Fórum Cuernavaca (Grand Outlet): Calle Jacarandas 103, colonia Ricardo Flores Magón, Cuernavaca. Cuenta con tiendas, restaurantes y opciones de entretenimiento.",
+"AVERANDA: Autopista México-Acapulco, km 87.5, zona Villas del Lago, Cuernavaca. Centro comercial al aire libre con tiendas, restaurantes, cine y espacios para pasear.",
+"Centro Cibeles: Boulevard Paseo Cuauhnáhuac 1932, Jiutepec. Plaza con comercios y servicios.",
+"Plaza Novum: Boulevard Paseo Cuauhnáhuac, km 3.5, Jiutepec.",
+"Plaza Cedros CIVAC: Eje Norte Sur 2, CIVAC, Jiutepec.",
+"SUPERMERCADOS Y COMPRAS",
+    "Soriana Híper Jiutepec: Boulevard Paseo Cuauhnáhuac 173, Tejalpa, Jiutepec.",
+    "Walmart CIVAC: zona de Cuernavaca-Cuautla, km 4.5, CIVAC, Jiutepec.",
+    "Chedraui Jiutepec: Boulevard Paseo Cuauhnáhuac 3, colonia Moctezuma, Jiutepec.",
+    "Te recomendamos consultar Google Maps o Waze para conocer la ruta, el tiempo de traslado y los horarios actualizados antes de salir."
+  ]
+},
+    {
+  "id": "emergencias",
+  "icono": "🚨",
+  "titulo": "Emergencias y atención médica",
+  "descripcion": "Información importante para solicitar ayuda durante tu estancia.",
+  "contenido": [
+    "NÚMERO GENERAL DE EMERGENCIAS",
+    "911: número nacional para solicitar apoyo de ambulancias, policía, bomberos y servicios de emergencia. Utilízalo ante una situación que ponga en riesgo la vida o la seguridad de las personas.",
+    "ATENCIÓN MÉDICA Y HOSPITALES",
+    "Centro Médico Jiutepec: C. 20 de Noviembre Sur 30, colonia Centro, Jiutepec, Morelos. Cuenta con servicio de urgencias y atención médica las 24 horas.",
+    "Teléfono: 777 176 9067.",
+    "Hospital General de Jiutepec IMSS-Bienestar: Par Vial Lázaro Cárdenas 2400, colonia Centro, Jiutepec, Morelos. Hospital público con servicio de urgencias.",
+    "RECOMENDACIONES IMPORTANTES",
+    "Al llamar al 911, indica que te encuentras en una casa ubicada sobre Par Vial, frente a las oficinas de Cablemás, en Jiutepec, Morelos, y proporciona la dirección exacta al operador.",
+    "Describe claramente qué ocurrió, cuántas personas necesitan ayuda y si existe algún riesgo adicional.",
+    "No traslades por tu cuenta a una persona gravemente lesionada, inconsciente o con dificultad para respirar. Solicita asistencia de emergencia.",
+    "Si la situación lo permite, avisa también a la anfitriona para que pueda brindarte apoyo."
+  ]
+},
+    {
       "id": "gas",
       "icono": "🔥",
       "titulo": "Uso del gas y calentador de agua",
