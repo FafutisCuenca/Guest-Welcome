@@ -480,6 +480,28 @@ button {
   border-radius: 10px;
 }
 
+/* CÓDIGO QR: VISUALIZACIÓN COMPLETA EN TELEVISIÓN */
+
+.tv-modal-content .tv-gallery.wifi-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.tv-modal-content .tv-gallery.wifi-gallery img {
+  display: block;
+  width: 260px;
+  max-width: 45vw;
+  height: auto;
+  max-height: 42vh;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 8px;
+}
+
 .tv-modal-footer {
   display: flex;
   justify-content: space-between;
