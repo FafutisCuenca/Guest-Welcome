@@ -515,5 +515,21 @@ footer {
   outline: none;
 }
 
+/* Código QR de la sección Wi-Fi */
+.wifi-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  margin: 20px auto;
+}
+
+.wifi-gallery img {
+  display: block;
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
+}
 
 
