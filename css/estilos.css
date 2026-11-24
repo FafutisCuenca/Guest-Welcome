@@ -1,1 +1,413 @@
- :root{--green:#365e59;--green2:#527a72;--sage:#a9c9c3;--cream:#f7f5f0;--ink:#243a36;--gold:#d7c18b}*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif}.topbar{min-height:72px;padding:14px 5%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font-weight:bold;letter-spacing:2px}.brand-icon{width:40px;height:40px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:24px}.clock{color:#f2e6c9;font-size:18px}.hero{display:grid;grid-template-columns:1fr 1fr;background:var(--green);color:white;min-height:440px}.hero-content{padding:55px 9%;display:flex;flex-direction:column;justify-content:center}.eyebrow{color:#d7c18b;font-size:11px;font-weight:bold;letter-spacing:2.5px}.hero h1,.section-heading h2,.host h2{font-family:Georgia,serif;font-weight:normal}.hero h1{font-size:clamp(36px,4.5vw,62px);line-height:1.1;margin:18px 0}.hero-content p{font-size:18px;line-height:1.65;color:#e3ece8}.subtitulo{font-size:14px!important;color:#f0e5cd!important}.hero-photo{min-height:440px;background:#7c938a center/cover no-repeat}.section{padding:55px 5%}.section-heading{text-align:center;margin-bottom:30px}.section-heading h2{font-size:clamp(28px,3vw,40px);margin:12px 0}.section-heading p{color:#687b75}.menu-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:1250px;margin:auto}.menu-card{background:#fff;border:1px solid #e3e6df;border-radius:14px;padding:24px;text-align:left;min-height:150px;color:var(--ink);cursor:pointer;box-shadow:0 5px 18px #233b3210;transition:.2s}.menu-card:hover,.menu-card:focus{transform:translateY(-3px);border-color:var(--green2);outline:3px solid #a9c9c355}.menu-icon{font-size:30px;display:block;margin-bottom:12px}.menu-card h3{font-size:18px;margin:0 0 8px}.menu-card p{color:#6c7b76;font-size:14px;line-height:1.5;margin:0}.host{margin:0 5% 50px;background:#e8e9e1;border-radius:16px;padding:28px;display:grid;grid-template-columns:180px 1fr;gap:28px;align-items:center}.host img{width:180px;height:180px;object-fit:cover;border-radius:50%}.host h2{font-size:36px;margin:8px 0}.host p{line-height:1.65}.contact-button{display:inline-block;background:var(--green);color:white;text-decoration:none;padding:14px 20px;border-radius:7px}footer{background:var(--green);color:#e4ebe6;padding:22px 5%;display:flex;justify-content:space-between;font-size:12px;letter-spacing:1px}.modal{display:none;position:fixed;inset:0;z-index:10;background:#10221fce;padding:22px;align-items:center;justify-content:center}.modal.visible{display:flex}.modal-content{position:relative;background:#fff;border-radius:16px;padding:38px;width:min(850px,100%);max-height:90vh;overflow:auto}.modal-content h2{font:normal 32px Georgia,serif;color:var(--green)}.modal-content p{line-height:1.75;color:#465a54;font-size:16px}.close-button{position:absolute;right:17px;top:8px;border:0;background:none;font-size:34px;cursor:pointer;color:var(--green)}.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:20px}.gallery img{width:100%;height:190px;object-fit:cover;border-radius:10px}.modal-content .note{padding:12px 15px;background:#f0f3ee;border-left:4px solid var(--green2);border-radius:5px}@media(max-width:760px){.hero{grid-template-columns:1fr}.hero-photo{grid-row:1;min-height:250px}.hero-content{padding:35px 7%}.menu-grid{grid-template-columns:repeat(2,1fr)}.host{grid-template-columns:1fr;text-align:center}.host img{margin:auto}.topbar{gap:12px}.brand{font-size:12px}}@media(max-width:480px){.menu-grid{grid-template-columns:1fr}.section{padding:38px 5%}.hero-photo{min-height:220px}.modal-content{padding:28px 20px}.gallery img{height:160px}footer{flex-direction:column;gap:8px}}
+
+:root {
+  --green: #365e59;
+  --green2: #527a72;
+  --sage: #a9c9c3;
+  --cream: #f7f5f0;
+  --ink: #243a36;
+  --gold: #d7c18b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topbar {
+  min-height: 72px;
+  padding: 14px 5%;
+  background: var(--green);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.brand-icon {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--gold);
+  font-size: 24px;
+}
+
+.clock {
+  color: #f2e6c9;
+  font-size: 18px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--green);
+  color: white;
+  min-height: 440px;
+}
+
+.hero-content {
+  padding: 55px 9%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eyebrow {
+  color: #d7c18b;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2.5px;
+}
+
+.hero h1,
+.section-heading h2,
+.host h2 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 4.5vw, 62px);
+  line-height: 1.1;
+  margin: 18px 0;
+}
+
+.hero-content p {
+  font-size: 18px;
+  line-height: 1.65;
+  color: #e3ece8;
+}
+
+.subtitulo {
+  font-size: 14px !important;
+  color: #f0e5cd !important;
+}
+
+.hero-photo {
+  min-height: 440px;
+  background: #7c938a center/cover no-repeat;
+}
+
+.section {
+  padding: 55px 5%;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-heading h2 {
+  font-size: clamp(28px, 3vw, 40px);
+  margin: 12px 0;
+}
+
+.section-heading p {
+  color: #687b75;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 1250px;
+  margin: auto;
+}
+
+.menu-card {
+  background: #fff;
+  border: 1px solid #e3e6df;
+  border-radius: 14px;
+  padding: 24px;
+  text-align: left;
+  min-height: 150px;
+  color: var(--ink);
+  cursor: pointer;
+  box-shadow: 0 5px 18px #233b3210;
+  transition: .2s;
+}
+
+.menu-card:hover,
+.menu-card:focus {
+  transform: translateY(-3px);
+  border-color: var(--green2);
+  outline: 3px solid #a9c9c355;
+}
+
+.menu-icon {
+  font-size: 30px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.menu-card h3 {
+  font-size: 18px;
+  margin: 0 0 8px;
+}
+
+.menu-card p {
+  color: #6c7b76;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* TARJETA ESPECIAL DE WI-FI */
+
+.menu-card:has(.menu-icon) {
+  position: relative;
+}
+
+.menu-card:has(.menu-icon) h3 {
+  color: var(--ink);
+}
+
+/* INFORMACIÓN DE CONEXIÓN WI-FI */
+
+.wifi-info {
+  margin: 20px 0 5px;
+  padding: 32px 25px;
+  background: #f0f5f2;
+  border: 1px solid #d9e6df;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.wifi-icon {
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 20px;
+  display: grid;
+  place-items: center;
+  background: var(--green);
+  color: white;
+  border-radius: 50%;
+  font-size: 38px;
+}
+
+.wifi-info p:first-of-type {
+  margin: 0 0 8px;
+  color: var(--green2);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.wifi-info h3 {
+  margin: 0 0 25px;
+  color: var(--green);
+  font-size: clamp(23px, 4vw, 32px);
+  letter-spacing: 1px;
+  overflow-wrap: anywhere;
+}
+
+.wifi-info p:last-of-type {
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 18px;
+  background: #fff;
+  border-left: 4px solid var(--gold);
+  border-radius: 8px;
+  line-height: 1.7;
+  color: var(--ink);
+  font-size: 15px;
+}
+
+.host {
+  margin: 0 5% 50px;
+  background: #e8e9e1;
+  border-radius: 16px;
+  padding: 28px;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.host img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.host h2 {
+  font-size: 36px;
+  margin: 8px 0;
+}
+
+.host p {
+  line-height: 1.65;
+}
+
+.contact-button {
+  display: inline-block;
+  background: var(--green);
+  color: white;
+  text-decoration: none;
+  padding: 14px 20px;
+  border-radius: 7px;
+}
+
+footer {
+  background: var(--green);
+  color: #e4ebe6;
+  padding: 22px 5%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background: #10221fce;
+  padding: 22px;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.visible {
+  display: flex;
+}
+
+.modal-content {
+  position: relative;
+  background: #fff;
+  border-radius: 16px;
+  padding: 38px;
+  width: min(850px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+}
+
+.modal-content h2 {
+  font: normal 32px Georgia, serif;
+  color: var(--green);
+}
+
+.modal-content p {
+  line-height: 1.75;
+  color: #465a54;
+  font-size: 16px;
+}
+
+.close-button {
+  position: absolute;
+  right: 17px;
+  top: 8px;
+  border: 0;
+  background: none;
+  font-size: 34px;
+  cursor: pointer;
+  color: var(--green);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.modal-content .note {
+  padding: 12px 15px;
+  background: #f0f3ee;
+  border-left: 4px solid var(--green2);
+  border-radius: 5px;
+}
+
+@media(max-width:760px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-photo {
+    grid-row: 1;
+    min-height: 250px;
+  }
+
+  .hero-content {
+    padding: 35px 7%;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .host {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .host img {
+    margin: auto;
+  }
+
+  .topbar {
+    gap: 12px;
+  }
+
+  .brand {
+    font-size: 12px;
+  }
+}
+
+@media(max-width:480px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 38px 5%;
+  }
+
+  .hero-photo {
+    min-height: 220px;
+  }
+
+  .modal-content {
+    padding: 28px 20px;
+  }
+
+  .gallery img {
+    height: 160px;
+  }
+
+  .wifi-info {
+    padding: 25px 16px;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
