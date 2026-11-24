@@ -288,22 +288,43 @@
     }
   }
 
-  function cargarSecciones(datos) {
-    secciones = Array.isArray(datos.secciones) ? datos.secciones : [];
+  
+function cargarSecciones(datos) {
+  const originales = Array.isArray(datos.secciones)
+    ? datos.secciones
+    : [];
 
-    menu.replaceChildren();
+  // Coloca primero las opciones de ayuda y emergencias.
+  secciones = [...originales].sort((a, b) => {
+    const textoA = `${a.titulo || ""} ${a.descripcion || ""}`
+      .toLocaleLowerCase("es-MX")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
 
-    if (!secciones.length) {
-      menu.appendChild(
-        crearElemento("p", "tv-loading", "No hay secciones disponibles.")
-      );
-      return;
-    }
+    const textoB = `${b.titulo || ""} ${b.descripcion || ""}`
+      .toLocaleLowerCase("es-MX")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
 
-    secciones.forEach((seccion, indice) => {
-      menu.appendChild(crearTarjeta(seccion, indice));
-    });
+    const prioridad = (texto) =>
+      /ayuda|emergencia/.test(texto) ? 0 : 1;
+
+    return prioridad(textoA) - prioridad(textoB);
+  });
+
+  menu.replaceChildren();
+
+  if (!secciones.length) {
+    menu.appendChild(
+      crearElemento("p", "tv-loading", "No hay secciones disponibles.")
+    );
+    return;
   }
+
+  secciones.forEach((seccion, indice) => {
+    menu.appendChild(crearTarjeta(seccion, indice));
+  });
+}
 
   function elementoEnFoco() {
     const elemento = document.activeElement;
