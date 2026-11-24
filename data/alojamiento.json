@@ -3,7 +3,7 @@
   "nombre": "NUESTRA CASA · CUERNAVACA",
   "subtitulo": "Casa familiar en privada para descanso de fin de semana · Cuernavaca, Mor.",
   "mensajeBienvenida": "Deseamos que disfruten cada momento de su estancia y que se lleven recuerdos maravillosos.",
-  "mensajeFinal": "Yo, o mi coanfitrión, estaremos allí cuando llegues y permaneceremos disponibles por WhatsApp durante tu estadía.",
+  "mensajeFinal": "Yo, o mi coanfitriona, estaremos allí cuando llegues y permaneceremos disponibles por WhatsApp durante tu estadía.",
   "fotoPrincipal": "img/alojamiento/image2.png",
   "anfitriona": {
     "nombre": "Alexandra Cuenca",
@@ -22,7 +22,7 @@
         "Hemos preparado cada espacio pensando en tu bienestar y en que puedas disfrutar plenamente de estos días.",
         "Para mantener un ambiente agradable y una buena convivencia con nuestros vecinos, te invitamos a conocer las siguientes recomendaciones y reglas de la casa. Son sencillas y nos ayudan a conservar las instalaciones y todas las comodidades que ponemos a tu disposición.",
         "Todo lo que encontrarás en nuestra casa está pensado para que tú y los futuros huéspedes puedan disfrutarlo. Te agradecemos que lo utilices con cuidado y respeto, como si fuera tu propio hogar, para que siempre se mantenga en excelentes condiciones."
-       ]
+      ]
     },
     {
       "id": "horarios",
@@ -30,9 +30,10 @@
       "titulo": "Horarios de entrada y salida",
       "descripcion": "Organiza tu llegada y salida.",
       "contenido": [
-        "HORARIO. Sabemos que quieres aprovechar el máximo el horario durante tu estancia, pero nos aseguramos de tener la casa lista para recibirte, por lo que sí es importante se respeten los horarios de entrada y salida.",
-        "ENTRADA: 12:00 a 14:00 hrs. Si llegas a tener algún contratiempo para tu llegada por el tráfico o simplemente te fuiste por otro camino y te perdiste en la zona, no te preocupes, avísanos con oportunidad ya que estaremos esperándote para recibirte.",
-        "SALIDA: 14:00 hrs. Si requieres de más tiempo igualmente avísanos para extender el tiempo de salida, te daremos 1 hora más para que termines de preparar tu salida y coordinar la recepción de las llaves y control de acceso al fraccionamiento."
+        "HORARIOS",
+        "Sabemos que quieres aprovechar al máximo el tiempo durante tu estancia, pero necesitamos tener la casa lista para recibirte, por lo que es importante respetar los horarios de entrada y salida.",
+        "ENTRADA: 12:00 a 14:00 horas. Si tienes algún contratiempo para llegar debido al tráfico o porque te perdiste en la zona, no te preocupes. Avísanos con oportunidad, ya que estaremos esperándote para recibirte.",
+        "SALIDA: 14:00 horas. Si requieres más tiempo, avísanos para consultar la posibilidad de extender tu salida hasta una hora adicional y coordinar la recepción de las llaves y el control de acceso al fraccionamiento."
       ]
     },
     {
@@ -44,7 +45,7 @@
         "Al llegar, te entregaremos un control remoto para abrir el portón principal del fraccionamiento.",
         "Para abrir o cerrar el portón, presiona una sola vez el botón superior del control y espera a que termine de abrirse o cerrarse.",
         "Por seguridad, verifica que el portón quede completamente cerrado al entrar y al salir.",
-        "No te detengas ni estaciones a la mitad del portón para evitar accidentes o daños a tu vehículo. Cualquier daño ocasionado por un uso inadecuado del portón deberá ser cubierto por el visitante responsable. No nos hacemos responsables de los incidentes provocados por los visitantes, en cuyo caso tendrán que cubrir los daños ocasionados."
+        "No te detengas ni estaciones a la mitad del portón para evitar accidentes o daños a tu vehículo. Cualquier daño ocasionado por un uso inadecuado del portón deberá ser cubierto por el visitante responsable. No nos hacemos responsables de los incidentes provocados por los visitantes."
       ]
     },
     {
@@ -53,7 +54,8 @@
       "titulo": "Número de personas y habitaciones",
       "descripcion": "Capacidad máxima y distribución de las recámaras.",
       "contenido": [
-        "La casa permite un máximo de hasta 8 personas (6 adultos y 2 menores), considerando que cuenta con 3 habitaciones, cada una de ellas tiene una cama King Size para tu descanso, closet con espacio suficiente para guardar maletas y colgar ropa; y en caso de exceder el número de personas, será acreedor a una cuota extra por persona por noche y tendrá que dar aviso al anfitrión para acordar la cuota."
+        "La casa permite un máximo de hasta 8 personas (6 adultos y 2 menores). Cuenta con 3 habitaciones, cada una con una cama King Size para tu descanso y clóset con espacio suficiente para guardar maletas y colgar ropa.",
+        "En caso de exceder el número de personas autorizado, se aplicará una cuota extra por persona y por noche. Será necesario avisar previamente a la anfitriona para acordar el importe."
       ],
       "imagenes": [
         {
@@ -80,20 +82,110 @@
       "titulo": "Pet Friendly",
       "descripcion": "Reglas para quienes viajan con mascotas.",
       "contenido": [
-        "Se permiten hasta 2 mascotas pequeñas o 1 mediana, se cuenta con una camita, un recipiente para alimentos y agua; para que tu mascota se sienta como en casa.",
-        "Los desechos de las mascotas deben de tirarse en bolsas amarradas y en el contenedor de basura que está a la entrada de la casa. No pueden estar en el área común del jardín del fraccionamiento sin supervisión.",
-        "No pueden meterse a las camas, ni a la alberca, ni subirse en los sillones de la sala o sillas del comedor.",
-        "Para mantener siempre limpio el interior de la casa y los muebles, no se permite que las mascotas hagan sus necesidades en el interior, por lo que se deben limpiar todos los desechos de las mascotas que lleguen a hacerse en áreas de la casa, jardín interior y área común."
+        "Se permiten hasta 2 mascotas pequeñas o 1 mediana. Se cuenta con una camita y un recipiente para alimentos y agua, para que tu mascota se sienta como en casa.",
+        "Los desechos de las mascotas deben depositarse en bolsas amarradas y colocarse en el contenedor de basura que está a la entrada de la casa. Las mascotas no pueden permanecer en el área común del jardín del fraccionamiento sin supervisión.",
+        "No pueden subirse a las camas, entrar a la alberca ni subirse a los sillones de la sala o sillas del comedor.",
+        "Para mantener limpio el interior de la casa y los muebles, no se permite que las mascotas hagan sus necesidades dentro de la casa. Si llegara a ocurrir algún accidente en el interior, jardín interior o área común, deberán limpiarse todos los desechos de inmediato."
       ],
       "imagenes": [
         {
           "src": "img/alojamiento/PetFriendly01.JPG",
-          "alt": "Fotografías de mascota"
+          "alt": "Fotografía de mascota"
         },
-                {
+        {
           "src": "img/alojamiento/PetFriendly02.JPG",
           "alt": "Fotografía de mascota"
         }
+      ]
+    },
+    {
+      "id": "reglamento",
+      "icono": "📋",
+      "titulo": "Reglamento y recomendaciones",
+      "descripcion": "Indicaciones importantes para cuidar la casa y disfrutar una estancia segura.",
+      "contenido": [
+        "REGLAS GENERALES DE LA CASA",
+        "Te damos la bienvenida y esperamos que disfrutes tu estancia. Para conservar nuestra casa en buenas condiciones y procurar una convivencia agradable, te pedimos leer y respetar las siguientes indicaciones.",
+
+        "USO DE LA ALBERCA",
+        "El uso de la alberca es bajo la responsabilidad de los huéspedes. No se permite utilizarla en estado de ebriedad o bajo condiciones que puedan comprometer la seguridad de las personas.",
+        "Los menores de edad deberán estar acompañados y bajo la supervisión directa y permanente de un adulto responsable. No se permite que los niños permanezcan solos en el área de alberca, ni siquiera por periodos breves.",
+        "El adulto responsable deberá permanecer atento y hacerse cargo de la vigilancia de los menores durante todo el tiempo que permanezcan dentro o cerca de la alberca.",
+        "No se permite ingresar a la alberca con alimentos ni bebidas.",
+        "Está prohibido introducir botellas, vasos, copas o cualquier recipiente de vidrio en la alberca o en sus áreas cercanas. Utiliza recipientes de plástico para evitar accidentes.",
+        "Quedan estrictamente prohibidos los clavados. La alberca tiene una profundidad máxima aproximada de 1.60 metros y el área de chapoteadero alcanza aproximadamente 40 centímetros.",
+        "La alberca no está climatizada.",
+        "Los huéspedes son responsables del uso adecuado de las instalaciones y de la supervisión de las personas que los acompañan.",
+        "Los anfitriones no se hacen responsables por accidentes ocasionados por el mal uso de las instalaciones o por el incumplimiento de estas indicaciones.",
+
+        "FUMAR",
+        "Únicamente se permite fumar en el área de jardín interior. Está estrictamente prohibido fumar dentro de la casa, en las recámaras y en los baños.",
+
+        "ARMAS Y DROGAS",
+        "No está permitido introducir armas a la propiedad ni consumir drogas prohibidas por la legislación vigente.",
+
+        "RUIDO Y HORARIOS DE DESCANSO",
+        "Por respeto a los vecinos del fraccionamiento, se solicita evitar el ruido excesivo a partir de las 23:00 horas y hasta las 07:00 horas del día siguiente. Durante el día también deberá mantenerse un volumen moderado.",
+        "No tocar los timbres de otras casas para evitar molestar a los vecinos. Para ingresar, utiliza únicamente el interfón correspondiente a nuestra casa, identificada con la letra F.",
+
+        "FIESTAS Y REUNIONES",
+        "Las fiestas y reuniones están permitidas, siempre que sean moderadas y se haga un uso responsable de la casa y sus instalaciones. Para mayor comodidad, podrán realizarse en el área de jardín.",
+        "Está prohibido sacar muebles del interior de la casa al jardín, incluyendo sillones de la sala, sillas, mesa del comedor y bancos de la barra.",
+        "Únicamente está permitido utilizar en el jardín la mesa redonda con sus sillas, así como los camastros y la sombrilla, que también pueden colocarse en el área de la alberca.",
+        "Si requieren mesas y sillas adicionales para el jardín, contamos con un proveedor que ofrece este servicio con costo adicional. Deberá solicitarse con anticipación a la anfitriona, sujeto a disponibilidad y horarios.",
+
+        "ROPA HÚMEDA",
+        "Favor de no sentarse en los cojines, sillones de la sala, camas o sillas del comedor utilizando ropa o toallas húmedas o mojadas. Esto ayuda a conservar los muebles, colchones y textiles en buenas condiciones.",
+
+        "TOALLAS",
+        "Contamos con toallas para uso en la alberca y los baños.",
+        "Si las toallas presentan manchas por haber sido utilizadas para trapear, limpiar alimentos o líquidos, desmaquillarse o teñirse el cabello, deberán reponerse por toallas nuevas de la misma calidad o cubrirse su costo.",
+        "Evita dejar las toallas en el piso, mojadas sobre las camas, sillones de la sala o sillas del comedor. Tampoco deben dejarse dobladas cuando estén mojadas.",
+        "No está permitido sacar las toallas del fraccionamiento.",
+
+        "BASURA Y LIMPIEZA",
+        "Se les pide depositar toda la basura en bolsas cerradas y colocarlas en el contenedor ubicado al frente de la entrada de la casa.",
+        "Les pedimos su apoyo para no dejar basura en los baños, recámaras, sala, comedor, cocina, área de la alberca ni jardín.",
+        "Tampoco dejar platos sucios ni residuos de comida.",
+        "Ponemos a su disposición bolsas negras para la basura, que encontrarán en el último cajón debajo de la estufa.",
+
+        "ENSERES DOMÉSTICOS E INSTALACIONES",
+        "Te pedimos cuidar los enseres domésticos y todas las instalaciones de la casa.",
+        "En caso de detectar algún desperfecto o si ocurre algún accidente, deberá reportarse inmediatamente a la anfitriona. Cuando corresponda, el artículo deberá reponerse o cubrirse el costo de los daños ocasionados.",
+        "La casa cuenta con vasos, tazas y copas de vidrio. No deben introducirse al microondas ni utilizarse cerca de la alberca o del área de jardín para evitar accidentes.",
+
+        "MÚSICA Y ASISTENTE VIRTUAL ALEXA",
+        "Durante tu estancia podrás disfrutar de música a través del asistente virtual ALEXA, que ponemos a tu disposición para hacer más agradable tu visita.",
+        "Funciona mediante comandos de voz. Puedes hacerle preguntas o pedirle que reproduzca música. Por ejemplo: «ALEXA, pon música...» o «ALEXA, dame la hora...»",
+        "Queda prohibida la compra de música o de cualquier contenido o servicio que no esté disponible en el dispositivo. En caso de realizarse alguna compra, el huésped deberá cubrir el importe correspondiente.",
+
+        "AGUA",
+        "El agua de la casa está destinada exclusivamente al uso del fregadero de la cocina, sanitarios, regaderas y lavadora. No se recomienda para consumo humano.",
+        "En caso de no contar con agua, se podrá encender la bomba que se encuentra al frente de la casa, a un costado del contenedor de basura.",
+        "La casa cuenta con una bomba de presión que proporciona suficiente presión de agua en las regaderas.",
+        "Los lavabos cuentan con un mecanismo de apertura y cierre manual. Te pedimos abrirlo únicamente cuando lo utilices y cerrarlo al terminar. Asegúrate de dejarlo cerrado cuando salgas del baño o de la casa.",
+        "Verifica que los botones de descarga de los sanitarios (W.C.) no queden oprimidos o sumidos, para evitar desperdiciar agua.",
+
+        "AGUA CALIENTE",
+        "El calentador o boiler estará encendido a tu llegada para que puedas disfrutar de agua caliente durante tu estancia.",
+        "Si no cuentas con agua caliente, será necesario encender el calentador o boiler, que se encuentra a un costado de la entrada de la casa.",
+
+        "LUZ Y VENTILADORES",
+        "Para cuidar el medio ambiente y evitar el consumo innecesario de energía, al terminar tu estancia verifica que todos los ventiladores y luces estén apagados.",
+        "Asegúrate también de desconectar los aparatos eléctricos que no estén en uso, como horno de microondas, licuadora, cafetera y ventilador de piso, entre otros.",
+
+        "JUEGOS DE MESA",
+        "Ponemos a tu disposición algunos juegos de mesa para disfrutar momentos de convivencia y diversión en familia.",
+        "Los encontrarás en el clóset de la habitación de la planta superior.",
+        "Te pedimos cuidar todas las piezas, cartas, tableros, dados y demás componentes, para que nuestros siguientes huéspedes también puedan disfrutarlos.",
+
+        "RECOMENDACIONES ANTES DE RETIRARTE",
+        "No arrojar papeles, toallas sanitarias ni ningún tipo de basura al W.C.",
+        "Verificar que los botones de descarga de los sanitarios no queden oprimidos, para evitar desperdiciar agua.",
+        "Asegurarse de que los mecanismos de los lavabos queden cerrados cuando no se utilicen y al retirarse de la casa.",
+        "Depositar toda la basura en bolsas cerradas dentro del contenedor ubicado al frente de la entrada de la casa.",
+        "No dejar basura en baños, recámaras, sala, comedor, jardín ni área de alberca. Tampoco dejar platos sucios ni residuos de comida.",
+        "Antes de retirarte, apagar luces y ventiladores y verificar que los aparatos eléctricos queden desconectados cuando corresponda."
       ]
     },
     {
@@ -103,56 +195,70 @@
       "descripcion": "Conéctate a Internet durante tu estancia.",
       "contenido": [
         "NOMBRE DE LA RED: INFINITUMAAFA",
-        "CONTRASEÑA: Por seguridad, solicítala directamente a la anfitriona o escanea el código QR que se encuentra en el interior de la casa."
+        "CONTRASEÑA: Por seguridad, solicítala directamente a la anfitriona o consulta el código QR que se encuentra en el interior de la casa."
+      ],
+      "imagenes": [
+        {
+          "src": "img/alojamiento/CodigoQR-RedWIFI.JPG",
+          "alt": "QR"
+        }
       ]
     },
     {
-  "id": "sitios-interes",
-  "icono": "📍",
-  "titulo": "Sitios de interés",
-  "descripcion": "Conoce algunos lugares cercanos para hacer compras, salir a comer o disfrutar de Jiutepec y sus alrededores.",
-  "contenido": [
-    "REFERENCIAS DE LA ZONA",
-    "Ex Hacienda de Cortés: uno de los principales referentes históricos de la zona. Se encuentra aproximadamente a 500 metros de nuestra casa, de acuerdo con la referencia de ubicación proporcionada.",
-    "Hotel Camino Real Sumiya: un sitio emblemático de arquitectura y jardines de inspiración japonesa, ubicado en Jiutepec. El acceso a sus instalaciones está sujeto a las condiciones del establecimiento.",
-    "Centro de Jiutepec: puedes visitar el Zócalo y el Ex Convento de Santiago Apóstol, una construcción histórica del siglo XVI.",
-"PLAZAS Y CENTROS COMERCIALES",
-"Plaza Fórum Cuernavaca (Grand Outlet): Calle Jacarandas 103, colonia Ricardo Flores Magón, Cuernavaca. Cuenta con tiendas, restaurantes y opciones de entretenimiento.",
-"MAPA|Plaza Fórum Cuernavaca|https://www.google.com/maps/dir/?api=1&destination=Forum+Cuernavaca+Jacarandas+103+Morelos",
-"AVERANDA: Autopista México-Acapulco, km 87.5, zona Villas del Lago, Cuernavaca. Centro comercial al aire libre con tiendas, restaurantes, cine y espacios para pasear.",
-"MAPA|AVERANDA|https://www.google.com/maps/dir/?api=1&destination=AVERANDA+Cuernavaca+Morelos",
-"Centro Cibeles: Boulevard Paseo Cuauhnáhuac 1932, Jiutepec. Plaza con comercios y servicios.",
-"MAPA|Centro Cibeles|https://www.google.com/maps/dir/?api=1&destination=Centro+Cibeles+Jiutepec+Morelos",
-"Plaza Novum: Boulevard Paseo Cuauhnáhuac, km 3.5, Jiutepec.",
-"MAPA|Plaza Novum|https://www.google.com/maps/dir/?api=1&destination=Plaza+Novum+Jiutepec+Morelos",
-"Plaza Cedros CIVAC: Eje Norte Sur 2, CIVAC, Jiutepec.",
-"MAPA|Plaza Cedros CIVAC|https://www.google.com/maps/dir/?api=1&destination=Plaza+Cedros+CIVAC+Jiutepec+Morelos.",
-"SUPERMERCADOS Y COMPRAS",
-    "Soriana Híper Jiutepec: Boulevard Paseo Cuauhnáhuac 173, Tejalpa, Jiutepec.",
-    "Walmart CIVAC: zona de Cuernavaca-Cuautla, km 4.5, CIVAC, Jiutepec.",
-    "Chedraui Jiutepec: Boulevard Paseo Cuauhnáhuac 3, colonia Moctezuma, Jiutepec.",
-    "Te recomendamos consultar Google Maps o cualquier otra aplicacioón para conocer la ruta, el tiempo de traslado y los horarios actualizados antes de salir."
-  ]
-},
+      "id": "sitios-interes",
+      "icono": "📍",
+      "titulo": "Sitios de interés",
+      "descripcion": "Conoce algunos lugares cercanos para hacer compras, salir a comer o disfrutar de Jiutepec y sus alrededores.",
+      "contenido": [
+        "REFERENCIAS DE LA ZONA",
+        "Ex Hacienda de Cortés: uno de los principales referentes históricos de la zona. Se encuentra aproximadamente a 500 metros de nuestra casa, de acuerdo con la referencia de ubicación proporcionada.",
+        "MAPA|Ex Hacienda de Cortés|https://www.google.com/maps/search/?api=1&query=Ex+Hacienda+de+Cortes+Jiutepec+Morelos",
+        "Hotel Camino Real Sumiya: un sitio emblemático de arquitectura y jardines de inspiración japonesa, ubicado en Jiutepec. El acceso a sus instalaciones está sujeto a las condiciones del establecimiento.",
+        "MAPA|Hotel Camino Real Sumiya|https://www.google.com/maps/search/?api=1&query=Camino+Real+Sumiya+Jiutepec+Morelos",
+        "Centro de Jiutepec: puedes visitar el Zócalo y el Ex Convento de Santiago Apóstol, una construcción histórica del siglo XVI.",
+        "MAPA|Centro de Jiutepec|https://www.google.com/maps/search/?api=1&query=Zocalo+de+Jiutepec+Morelos",
+
+        "PLAZAS Y CENTROS COMERCIALES",
+        "Plaza Fórum Cuernavaca (Grand Outlet): Calle Jacarandas 103, colonia Ricardo Flores Magón, Cuernavaca. Cuenta con tiendas, restaurantes y opciones de entretenimiento.",
+        "MAPA|Plaza Fórum Cuernavaca|https://www.google.com/maps/search/?api=1&query=Forum+Cuernavaca+Grand+Outlet+Jacarandas+103",
+        "AVERANDA: Autopista México-Acapulco, km 87.5, zona Villas del Lago, Cuernavaca. Centro comercial al aire libre con tiendas, restaurantes, cine y espacios para pasear.",
+        "MAPA|AVERANDA|https://www.google.com/maps/search/?api=1&query=AVERANDA+Cuernavaca+Morelos",
+        "Centro Cibeles: Boulevard Paseo Cuauhnáhuac 1932, Jiutepec. Plaza con comercios y servicios.",
+        "MAPA|Centro Cibeles|https://www.google.com/maps/search/?api=1&query=Centro+Cibeles+Jiutepec+Morelos",
+        "Plaza Novum: Boulevard Paseo Cuauhnáhuac, km 3.5, Jiutepec.",
+        "MAPA|Plaza Novum|https://www.google.com/maps/search/?api=1&query=Plaza+Novum+Jiutepec+Morelos",
+        "Plaza Cedros CIVAC: Eje Norte Sur 2, CIVAC, Jiutepec.",
+        "MAPA|Plaza Cedros CIVAC|https://www.google.com/maps/search/?api=1&query=Plaza+Cedros+CIVAC+Jiutepec+Morelos",
+
+        "SUPERMERCADOS Y COMPRAS",
+        "Soriana Híper Jiutepec: Boulevard Paseo Cuauhnáhuac 173, Tejalpa, Jiutepec.",
+        "MAPA|Soriana Híper Jiutepec|https://www.google.com/maps/search/?api=1&query=Soriana+Hiper+Jiutepec+Morelos",
+        "Walmart CIVAC: zona de Cuernavaca-Cuautla, km 4.5, CIVAC, Jiutepec.",
+        "MAPA|Walmart CIVAC|https://www.google.com/maps/search/?api=1&query=Walmart+CIVAC+Jiutepec+Morelos",
+        "Chedraui Jiutepec: Boulevard Paseo Cuauhnáhuac 3, colonia Moctezuma, Jiutepec.",
+        "MAPA|Chedraui Jiutepec|https://www.google.com/maps/search/?api=1&query=Chedraui+Jiutepec+Morelos",
+        "Te recomendamos consultar Google Maps o cualquier otra aplicación para conocer la ruta, el tiempo de traslado y los horarios actualizados antes de salir."
+      ]
+    },
     {
-  "id": "emergencias",
-  "icono": "🚨",
-  "titulo": "Emergencias y atención médica",
-  "descripcion": "Información importante para solicitar ayuda durante tu estancia.",
-  "contenido": [
-    "NÚMERO GENERAL DE EMERGENCIAS",
-    "911: número nacional para solicitar apoyo de ambulancias, policía, bomberos y servicios de emergencia. Utilízalo ante una situación que ponga en riesgo la vida o la seguridad de las personas.",
-    "ATENCIÓN MÉDICA Y HOSPITALES",
-    "Centro Médico Jiutepec: C. 20 de Noviembre Sur 30, colonia Centro, Jiutepec, Morelos. Cuenta con servicio de urgencias y atención médica las 24 horas.",
-    "Teléfono: 777 176 9067.",
-    "Hospital General de Jiutepec IMSS-Bienestar: Par Vial Lázaro Cárdenas 2400, colonia Centro, Jiutepec, Morelos. Hospital público con servicio de urgencias.",
-    "RECOMENDACIONES IMPORTANTES",
-    "Al llamar al 911, indica que te encuentras en una casa ubicada sobre Par Vial, frente a las oficinas de Cablemás, en Jiutepec, Morelos, y proporciona la dirección exacta al operador.",
-    "Describe claramente qué ocurrió, cuántas personas necesitan ayuda y si existe algún riesgo adicional.",
-    "No traslades por tu cuenta a una persona gravemente lesionada, inconsciente o con dificultad para respirar. Solicita asistencia de emergencia.",
-    "Si la situación lo permite, avisa también a la anfitriona para que pueda brindarte apoyo."
-  ]
-},
+      "id": "emergencias",
+      "icono": "🚨",
+      "titulo": "Emergencias y atención médica",
+      "descripcion": "Información importante para solicitar ayuda durante tu estancia.",
+      "contenido": [
+        "NÚMERO GENERAL DE EMERGENCIAS",
+        "911: número nacional para solicitar apoyo de ambulancias, policía, bomberos y servicios de emergencia. Utilízalo ante una situación que ponga en riesgo la vida o la seguridad de las personas.",
+        "ATENCIÓN MÉDICA Y HOSPITALES",
+        "Centro Médico Jiutepec: C. 20 de Noviembre Sur 30, colonia Centro, Jiutepec, Morelos. Cuenta con servicio de urgencias y atención médica las 24 horas.",
+        "Teléfono: 777 176 9067.",
+        "Hospital General de Jiutepec IMSS-Bienestar: Par Vial Lázaro Cárdenas 2400, colonia Centro, Jiutepec, Morelos. Hospital público con servicio de urgencias.",
+        "RECOMENDACIONES IMPORTANTES",
+        "Al llamar al 911, indica que te encuentras en una casa ubicada sobre Par Vial, frente a las oficinas de Cablemás, en Jiutepec, Morelos, y proporciona la dirección exacta al operador.",
+        "Describe claramente qué ocurrió, cuántas personas necesitan ayuda y si existe algún riesgo adicional.",
+        "No traslades por tu cuenta a una persona gravemente lesionada, inconsciente o con dificultad para respirar. Solicita asistencia de emergencia.",
+        "Si la situación lo permite, avisa también a la anfitriona para que pueda brindarte apoyo."
+      ]
+    },
     {
       "id": "gas",
       "icono": "🔥",
@@ -160,8 +266,8 @@
       "descripcion": "Indicaciones para el agua caliente.",
       "contenido": [
         "Para asegurar que la estufa funcione y el calentador de agua (boiler) caliente agua, se deberán abrir las llaves de paso de GAS y encender el boiler para tener agua caliente.",
-        "Para hacer un uso adecuado de este recurso, les pedimos lo apaguen durante su estancia en caso de no utilizarse y a su salida. El boiler y sus llaves de paso se encuentran en una puerta al frente de la casa, junto a un lado de la ventana de la cocina.",
-        "Las palancas están indicadas en amarillo y para que queden abiertas deberán estar en la dirección del tubo de gas. A tu salida deberás de asegurarte de apagar el calentador de agua (boiler) y cerrar las llaves de paso colocándolas de forma perpendicular al tubo de gas."
+        "Para hacer un uso adecuado de este recurso, les pedimos apagarlo durante su estancia en caso de no utilizarse y a su salida. El boiler y sus llaves de paso se encuentran en una puerta al frente de la casa, junto a la ventana de la cocina.",
+        "Las palancas están indicadas en amarillo y para que queden abiertas deberán estar en la dirección del tubo de gas. A tu salida deberás asegurarte de apagar el calentador de agua (boiler) y cerrar las llaves de paso colocándolas de forma perpendicular al tubo de gas."
       ]
     },
     {
@@ -171,8 +277,8 @@
       "descripcion": "Cómo dejar la casa al finalizar la estancia.",
       "contenido": [
         "No se cuenta con servicio de limpieza durante la estancia. Pueden solicitar el servicio, pero no se garantiza que esté disponible y tendrá un costo extra.",
-        "Se solicita que la casa se deje en las mismas condiciones de limpieza y orden en la que se encuentra.",
-        "Los platos, vasos, tazas, copas, utensilios de cocina y estufa deberán de dejarse limpios y sin restos de comida a la vista. Podrán dejarse en el escurridor si fuera necesario o en el espacio donde los encontraste a tu llegada."
+        "Se solicita que la casa se deje en las mismas condiciones de limpieza y orden en las que se encuentra.",
+        "Los platos, vasos, tazas, copas, utensilios de cocina y estufa deberán dejarse limpios y sin restos de comida a la vista. Podrán dejarse en el escurridor si fuera necesario o en el espacio donde los encontraste a tu llegada."
       ]
     },
     {
@@ -183,8 +289,8 @@
       "contenido": [
         "Anfitriona: Alexandra Cuenca",
         "Celular: 55 3812 4380",
-        "Coanfitrión: Teresita Castillo",
-        "Yo, o mi coanfitrión, estaremos allí cuando llegues y permaneceremos disponibles por WhatsApp durante tu estadía."
+        "Coanfitriona: Teresita Castillo",
+        "Yo, o mi coanfitriona, estaremos allí cuando llegues y permaneceremos disponibles por WhatsApp durante tu estadía."
       ]
     }
   ]
