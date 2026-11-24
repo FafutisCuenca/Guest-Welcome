@@ -87,8 +87,12 @@
       ],
       "imagenes": [
         {
-          "src": "img/alojamiento/PetFriendly01.jpg",
+          "src": "img/alojamiento/PetFriendly01.JPG",
           "alt": "Fotografías de mascota"
+        },
+                {
+          "src": "img/alojamiento/PetFriendly02.JPG",
+          "alt": "Fotografía de mascota"
         }
       ]
     },
