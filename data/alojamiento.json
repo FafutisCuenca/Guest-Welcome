@@ -1,0 +1,105 @@
+
+{
+  "nombre": "MI ALOJAMIENTO",
+  "subtitulo": "Tu estancia comienza aquí",
+  "mensajeBienvenida": "Nos alegra recibirte. Hemos preparado este espacio para que disfrutes una estancia cómoda, tranquila e inolvidable.",
+  "mensajeFinal": "Estamos a tu disposición para ayudarte durante tu estancia.",
+  "fotoPrincipal": "img/alojamiento/principal.jpg",
+  "whatsapp": "",
+  "telefono": "",
+  "wifi": {
+    "nombre": "",
+    "instrucciones": "Solicita los datos de conexión al anfitrión."
+  },
+  "horarios": {
+    "checkin": "15:00",
+    "checkout": "11:00"
+  },
+  "secciones": [
+    {
+      "id": "wifi",
+      "icono": "📶",
+      "titulo": "Internet y Wi-Fi",
+      "descripcion": "Conéctate durante tu estancia.",
+      "contenido": [
+        "Consulta con el anfitrión los datos de conexión."
+      ]
+    },
+    {
+      "id": "alojamiento",
+      "icono": "🏡",
+      "titulo": "Conoce el alojamiento",
+      "descripcion": "Instalaciones y servicios disponibles.",
+      "contenido": [
+        "Aquí encontrarás información sobre las instalaciones."
+      ]
+    },
+    {
+      "id": "manual",
+      "icono": "📖",
+      "titulo": "Manual de uso",
+      "descripcion": "Instrucciones de los equipos.",
+      "contenido": [
+        "Consulta las instrucciones de los equipos y electrodomésticos."
+      ]
+    },
+    {
+      "id": "reglas",
+      "icono": "📋",
+      "titulo": "Reglamento",
+      "descripcion": "Normas para una buena convivencia.",
+      "contenido": [
+        "Respeta los horarios de descanso.",
+        "Mantén las instalaciones en buenas condiciones.",
+        "No dejes basura fuera de los lugares indicados."
+      ]
+    },
+    {
+      "id": "gastronomia",
+      "icono": "🍽️",
+      "titulo": "Dónde comer",
+      "descripcion": "Restaurantes y recomendaciones.",
+      "contenido": [
+        "Próximamente encontrarás nuestras recomendaciones gastronómicas."
+      ]
+    },
+    {
+      "id": "lugares",
+      "icono": "📍",
+      "titulo": "Qué visitar",
+      "descripcion": "Lugares de interés y actividades.",
+      "contenido": [
+        "Próximamente encontrarás lugares de interés cercanos."
+      ]
+    },
+    {
+      "id": "servicios",
+      "icono": "🛍️",
+      "titulo": "Servicios cercanos",
+      "descripcion": "Tiendas y servicios útiles.",
+      "contenido": [
+        "Consulta al anfitrión para recibir recomendaciones."
+      ]
+    },
+    {
+      "id": "emergencias",
+      "icono": "☎️",
+      "titulo": "Emergencias y contacto",
+      "descripcion": "Estamos para ayudarte.",
+      "contenido": [
+        "Emergencias en México: 911.",
+        "Para otras consultas, contacta al anfitrión."
+      ]
+    },
+    {
+      "id": "salida",
+      "icono": "🧳",
+      "titulo": "Información de salida",
+      "descripcion": "Prepara tu check-out.",
+      "contenido": [
+        "Horario de salida: 11:00.",
+        "Asegúrate de llevar todas tus pertenencias."
+      ]
+    }
+  ]
+}
