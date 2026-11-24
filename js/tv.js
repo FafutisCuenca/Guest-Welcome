@@ -175,24 +175,28 @@
     return tarjeta;
   }
 
-  function crearGaleria(imagenes) {
-    if (!Array.isArray(imagenes) || !imagenes.length) return null;
 
-    const galeria = crearElemento("div", "tv-gallery");
+function crearGaleria(imagenes, esWifi = false) {
+  if (!Array.isArray(imagenes) || !imagenes.length) return null;
 
-    imagenes.forEach((imagen) => {
-      if (!imagen || !imagen.src) return;
+  const galeria = crearElemento(
+    "div",
+    esWifi ? "tv-gallery wifi-gallery" : "tv-gallery"
+  );
 
-      const img = document.createElement("img");
-      img.src = encodeURI(imagen.src);
-      img.alt = imagen.alt || "Fotografía de la casa";
-      img.loading = "lazy";
+  imagenes.forEach((imagen) => {
+    if (!imagen || !imagen.src) return;
 
-      galeria.appendChild(img);
-    });
+    const img = document.createElement("img");
+    img.src = encodeURI(imagen.src);
+    img.alt = imagen.alt || "Fotografía de la casa";
+    img.loading = "lazy";
 
-    return galeria.children.length ? galeria : null;
-  }
+    galeria.appendChild(img);
+  });
+
+  return galeria.children.length ? galeria : null;
+}
 
   function crearContenido(seccion) {
     const fragmento = document.createDocumentFragment();
