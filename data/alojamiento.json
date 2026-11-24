@@ -87,7 +87,7 @@
       ],
       "imagenes": [
         {
-          "src": "img/alojamiento/PetFriendly01.jpeg",
+          "src": "img/alojamiento/PetFriendly01.jpg",
           "alt": "Fotografías de mascota"
         }
       ]
@@ -99,18 +99,18 @@
       "descripcion": "Conéctate a Internet durante tu estancia.",
       "contenido": [
         "NOMBRE DE LA RED: INFINITUMAAFA",
-        "CONTRASEÑA: Por seguridad, solicítala directamente a la anfitriona o consulta el código QR que se encuentra en el interior de la casa."
+        "CONTRASEÑA: Por seguridad, solicítala directamente a la anfitriona o escanea el código QR que se encuentra en el interior de la casa."
       ]
     },
     {
       "id": "gas",
       "icono": "🔥",
-      "titulo": "Uso del gas y boiler",
+      "titulo": "Uso del gas y calentador de agua",
       "descripcion": "Indicaciones para el agua caliente.",
       "contenido": [
-        "Para asegurar que la estufa funcione y el boiler caliente agua, se deberán abrir las llaves de paso de GAS y encender el boiler para tener agua caliente.",
+        "Para asegurar que la estufa funcione y el calentador de agua (boiler) caliente agua, se deberán abrir las llaves de paso de GAS y encender el boiler para tener agua caliente.",
         "Para hacer un uso adecuado de este recurso, les pedimos lo apaguen durante su estancia en caso de no utilizarse y a su salida. El boiler y sus llaves de paso se encuentran en una puerta al frente de la casa, junto a un lado de la ventana de la cocina.",
-        "Las palancas están indicadas en amarillo y para que queden abiertas deberán estar en la dirección del tubo de gas. A tu salida deberás de asegurarte de apagar el boiler y cerrar las llaves de paso colocándolas de forma perpendicular al tubo de gas."
+        "Las palancas están indicadas en amarillo y para que queden abiertas deberán estar en la dirección del tubo de gas. A tu salida deberás de asegurarte de apagar el calentador de agua (boiler) y cerrar las llaves de paso colocándolas de forma perpendicular al tubo de gas."
       ]
     },
     {
@@ -119,7 +119,7 @@
       "titulo": "Limpieza de la casa",
       "descripcion": "Cómo dejar la casa al finalizar la estancia.",
       "contenido": [
-        "No se cuenta con servicio de limpieza durante la estancia. Le puede solicitar el servicio, pero no se garantiza que esté disponible y tendrá un costo extra.",
+        "No se cuenta con servicio de limpieza durante la estancia. Pueden solicitar el servicio, pero no se garantiza que esté disponible y tendrá un costo extra.",
         "Se solicita que la casa se deje en las mismas condiciones de limpieza y orden en la que se encuentra.",
         "Los platos, vasos, tazas, copas, utensilios de cocina y estufa deberán de dejarse limpios y sin restos de comida a la vista. Podrán dejarse en el escurridor si fuera necesario o en el espacio donde los encontraste a tu llegada."
       ]
