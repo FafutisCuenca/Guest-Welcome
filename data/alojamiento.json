@@ -1,104 +1,152 @@
-
 {
-  "nombre": "MI ALOJAMIENTO",
-  "subtitulo": "Tu estancia comienza aquí",
-  "mensajeBienvenida": "Nos alegra recibirte. Hemos preparado este espacio para que disfrutes una estancia cómoda, tranquila e inolvidable.",
-  "mensajeFinal": "Estamos a tu disposición para ayudarte durante tu estancia.",
-  "fotoPrincipal": "img/alojamiento/principal.jpg",
-  "whatsapp": "",
-  "telefono": "",
-  "wifi": {
-    "nombre": "",
-    "instrucciones": "Solicita los datos de conexión al anfitrión."
-  },
-  "horarios": {
-    "checkin": "15:00",
-    "checkout": "11:00"
+  "nombre": "NUESTRA CASA · CUERNAVACA",
+  "subtitulo": "Casa familiar en privada para descanso de fin de semana · Cuernavaca, Mor.",
+  "mensajeBienvenida": "¡Bienvenidos a nuestra casa! Disfruten nuestra casa. Esperamos que vivan una experiencia inolvidable.",
+  "mensajeFinal": "Yo, o mi coanfitrión, estaremos allí cuando llegues y permaneceremos disponibles por WhatsApp durante tu estadía.",
+  "fotoPrincipal": "img/alojamiento/image2.png",
+  "anfitriona": {
+    "nombre": "Alexandra Cuenca",
+    "telefono": "55 3812 4380",
+    "coanfitriona": "Teresita Castillo",
+    "foto": "img/alojamiento/image3.png"
   },
   "secciones": [
     {
-      "id": "wifi",
-      "icono": "📶",
-      "titulo": "Internet y Wi-Fi",
-      "descripcion": "Conéctate durante tu estancia.",
-      "contenido": [
-        "Consulta con el anfitrión los datos de conexión."
-      ]
-    },
-    {
-      "id": "alojamiento",
+      "id": "bienvenida",
       "icono": "🏡",
-      "titulo": "Conoce el alojamiento",
-      "descripcion": "Instalaciones y servicios disponibles.",
+      "titulo": "Bienvenidos a nuestra casa",
+      "descripcion": "Conoce a tus anfitrionas y disfruta tu estancia.",
       "contenido": [
-        "Aquí encontrarás información sobre las instalaciones."
+        "Me gusta mucho disfrutar los fines de semana con mi familia en diferentes lugares.",
+        "Disfruten nuestra casa.",
+        "Yo, o mi coanfitrión, estaremos allí cuando llegues y permaneceremos disponibles por WhatsApp durante tu estadía.",
+        "Buscando un máximo confort y disfrute de los días del fin de semana, te pedimos leas las siguientes reglas, a fin de evitar molestias con los vecinos y hacer buen uso de las facilidades e instalaciones que brindamos en nuestra casa.",
+        "Queremos recordarte que todo lo que se encuentra en el interior de la casa es para que lo disfrutes y también lo disfruten otros huéspedes, por lo que siempre les pedimos cuidado y respeto para que se conserve en las condiciones óptimas para que su estadía sea de lo más agradable y placentera."
+      ],
+      "imagenes": [
+        {
+          "src": "img/alojamiento/image3.png",
+          "alt": "Presentación de Ale, anfitriona"
+        }
       ]
     },
     {
-      "id": "manual",
-      "icono": "📖",
-      "titulo": "Manual de uso",
-      "descripcion": "Instrucciones de los equipos.",
+      "id": "horarios",
+      "icono": "🕒",
+      "titulo": "Horarios de entrada y salida",
+      "descripcion": "Organiza tu llegada y salida.",
       "contenido": [
-        "Consulta las instrucciones de los equipos y electrodomésticos."
+        "HORARIO. Sabemos que quieres aprovechar el máximo el horario durante tu estancia, pero nos aseguramos de tener la casa lista para recibirte, por lo que sí es importante se respeten los horarios de entrada y salida.",
+        "ENTRADA: 12:00 a 14:00 hrs. Si llegas a tener algún contratiempo para tu llegada por el tráfico o simplemente te fuiste por otro camino y te perdiste en la zona, no te preocupes, avísanos con oportunidad ya que estaremos esperándote para recibirte.",
+        "SALIDA: 14:00 hrs. Si requieres de más tiempo igualmente avísanos para extender el tiempo de salida, te daremos 1 hora más para que termines de preparar tu salida y coordinar la recepción de las llaves y control de acceso al fraccionamiento."
+      ],
+      "imagenes": [
+        {
+          "src": "img/alojamiento/image4.png",
+          "alt": "Página original sobre horarios y acerca de nuestra casa"
+        }
       ]
     },
     {
-      "id": "reglas",
-      "icono": "📋",
-      "titulo": "Reglamento",
-      "descripcion": "Normas para una buena convivencia.",
+      "id": "acceso",
+      "icono": "🚗",
+      "titulo": "Acceso al estacionamiento",
+      "descripcion": "Indicaciones para entrar y salir de la privada.",
       "contenido": [
-        "Respeta los horarios de descanso.",
-        "Mantén las instalaciones en buenas condiciones.",
-        "No dejes basura fuera de los lugares indicados."
+        "Para el acceso al fraccionamiento en automóvil por el portón principal, se te dará un control remoto al momento de tu llegada. Asegúrate que la puerta quede cerrada tanto al ingreso como a la salida por seguridad de todas las personas del fraccionamiento.",
+        "Para evitar algún incidente con el portón, solamente deberás de dar un solo clic (extendido) al control en el botón que tiene la letra “A” y esperar a que se abran o cierren correctamente las puertas.",
+        "Por seguridad NO deberán de permanecer estacionados a la mitad del portón para evitar daños a los automóviles. (No nos hacemos responsables de los incidentes provocados por los visitantes, en cuyo caso tendrán que cubrir el daño de la reparación)."
       ]
     },
     {
-      "id": "gastronomia",
-      "icono": "🍽️",
-      "titulo": "Dónde comer",
-      "descripcion": "Restaurantes y recomendaciones.",
+      "id": "personas",
+      "icono": "🛏️",
+      "titulo": "Número de personas y habitaciones",
+      "descripcion": "Capacidad máxima y distribución de las recámaras.",
       "contenido": [
-        "Próximamente encontrarás nuestras recomendaciones gastronómicas."
+        "La casa permite un máximo de hasta 8 personas (6 adultos y 2 menores), considerando que cuenta con 3 habitaciones, cada una de ellas tiene una cama King Size para tu descanso, closet con espacio suficiente para guardar maletas y colgar ropa; y en caso de exceder el número de personas, será acreedor a una cuota extra por persona por noche y tendrá que dar aviso al anfitrión para acordar la cuota."
+      ],
+      "imagenes": [
+        {
+          "src": "img/alojamiento/image5.jpeg",
+          "alt": "Habitación con cama King Size"
+        },
+        {
+          "src": "img/alojamiento/image8.jpeg",
+          "alt": "Habitación con cama King Size y clóset"
+        },
+        {
+          "src": "img/alojamiento/image6.jpeg",
+          "alt": "Fotografía adicional de habitación"
+        },
+        {
+          "src": "img/alojamiento/image7.jpeg",
+          "alt": "Fotografía adicional de habitación"
+        }
       ]
     },
     {
-      "id": "lugares",
-      "icono": "📍",
-      "titulo": "Qué visitar",
-      "descripcion": "Lugares de interés y actividades.",
+      "id": "mascotas",
+      "icono": "🐾",
+      "titulo": "Pet Friendly",
+      "descripcion": "Reglas para quienes viajan con mascotas.",
       "contenido": [
-        "Próximamente encontrarás lugares de interés cercanos."
+        "Se permiten hasta 2 mascotas pequeñas o 1 mediana, se cuenta con una camita, un recipiente para alimentos y agua; para que tu mascota se sienta como en casa.",
+        "Los desechos de las mascotas deben de tirarse en bolsas amarradas y en el contenedor de basura que está a la entrada de la casa. No pueden estar en el área común del jardín del fraccionamiento sin supervisión.",
+        "No pueden meterse a las camas, ni a la alberca, ni subirse en los sillones de la sala o sillas del comedor.",
+        "Para mantener siempre limpio el interior de la casa y los muebles, no se permite que las mascotas hagan sus necesidades en el interior, por lo que se deben limpiar todos los desechos de las mascotas que lleguen a hacerse en áreas de la casa, jardín interior y área común."
+      ],
+      "imagenes": [
+        {
+          "src": "img/alojamiento/image8.png",
+          "alt": "Fotografías originales de la sala y comedor"
+        }
       ]
     },
     {
-      "id": "servicios",
-      "icono": "🛍️",
-      "titulo": "Servicios cercanos",
-      "descripcion": "Tiendas y servicios útiles.",
+      "id": "gas",
+      "icono": "🔥",
+      "titulo": "Uso del gas y boiler",
+      "descripcion": "Indicaciones para el agua caliente.",
       "contenido": [
-        "Consulta al anfitrión para recibir recomendaciones."
+        "Para asegurar que la estufa funcione y el boiler caliente agua, se deberán abrir las llaves de paso de GAS y encender el boiler para tener agua caliente.",
+        "Para hacer un uso adecuado de este recurso, les pedimos lo apaguen durante su estancia en caso de no utilizarse y a su salida. El boiler y sus llaves de paso se encuentran en una puerta al frente de la casa, junto a un lado de la ventana de la cocina.",
+        "Las palancas están indicadas en amarillo y para que queden abiertas deberán estar en la dirección del tubo de gas. A tu salida deberás de asegurarte de apagar el boiler y cerrar las llaves de paso colocándolas de forma perpendicular al tubo de gas."
+      ],
+      "imagenes": [
+        {
+          "src": "img/alojamiento/image9.png",
+          "alt": "Página original Reglas de la Casa: gas y limpieza"
+        }
       ]
     },
     {
-      "id": "emergencias",
-      "icono": "☎️",
-      "titulo": "Emergencias y contacto",
-      "descripcion": "Estamos para ayudarte.",
+      "id": "limpieza",
+      "icono": "🧹",
+      "titulo": "Limpieza de la casa",
+      "descripcion": "Cómo dejar la casa al finalizar la estancia.",
       "contenido": [
-        "Emergencias en México: 911.",
-        "Para otras consultas, contacta al anfitrión."
+        "No se cuenta con servicio de limpieza durante la estancia. Le puede solicitar el servicio, pero no se garantiza que esté disponible y tendrá un costo extra.",
+        "Se solicita que la casa se deje en las mismas condiciones de limpieza y orden en la que se encuentra.",
+        "Los platos, vasos, tazas, copas, utensilios de cocina y estufa deberán de dejarse limpios y sin restos de comida a la vista. Podrán dejarse en el escurridor si fuera necesario o en el espacio donde los encontraste a tu llegada."
+      ],
+      "imagenes": [
+        {
+          "src": "img/alojamiento/image9.png",
+          "alt": "Página original Reglas de la Casa: gas y limpieza"
+        }
       ]
     },
     {
-      "id": "salida",
-      "icono": "🧳",
-      "titulo": "Información de salida",
-      "descripcion": "Prepara tu check-out.",
+      "id": "contacto",
+      "icono": "💬",
+      "titulo": "Contacto con las anfitrionas",
+      "descripcion": "Estamos disponibles durante tu estancia.",
       "contenido": [
-        "Horario de salida: 11:00.",
-        "Asegúrate de llevar todas tus pertenencias."
+        "Anfitriona: Alexandra Cuenca",
+        "Celular: 55 3812 4380",
+        "Coanfitrión: Teresita Castillo",
+        "Yo, o mi coanfitrión, estaremos allí cuando llegues y permaneceremos disponibles por WhatsApp durante tu estadía."
       ]
     }
   ]
