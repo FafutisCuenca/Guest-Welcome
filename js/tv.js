@@ -250,7 +250,8 @@ function crearGaleria(imagenes, esWifi = false) {
       }
     });
 
-    const galeria = crearGaleria(seccion.imagenes);
+ const esWifi = (seccion.id || "").toLowerCase() === "wifi";
+const galeria = crearGaleria(seccion.imagenes, esWifi);
 
     if (galeria) {
       fragmento.appendChild(galeria);
