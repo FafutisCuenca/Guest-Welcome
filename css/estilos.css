@@ -459,3 +459,21 @@ footer {
   letter-spacing: 0.5px;
   padding: 10px;
 }
+
+/* Ajuste de horarios y fechas en celulares */
+@media (max-width: 480px) {
+  .stay-date-item span {
+    font-size: 0.68rem;
+  }
+
+  .stay-date-item strong {
+    font-size: 1.05rem;
+  }
+
+  .stay-duration {
+    font-size: 0.88rem;
+  }
+}
+
+
+
