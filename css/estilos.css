@@ -562,3 +562,52 @@ footer {
 }
 
 
+/* =========================================
+   BLOQUES DE REGLAS Y RECOMENDACIONES
+   ========================================= */
+
+.modal-content .regla-card {
+  margin: 16px 0;
+  padding: 17px 20px;
+  background: #f0f3ee;
+  border-left: 4px solid var(--green2);
+  border-radius: 9px;
+  box-shadow: 0 3px 10px rgba(35, 59, 50, 0.05);
+}
+
+.modal-content .regla-titulo {
+  margin: 0 0 9px;
+  color: var(--green);
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.modal-content .regla-card p {
+  margin: 0;
+  color: #465a54;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.modal-content .regla-card p + p {
+  margin-top: 9px;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 480px) {
+  .modal-content .regla-card {
+    padding: 13px 15px;
+    margin: 12px 0;
+  }
+
+  .modal-content .regla-titulo {
+    font-size: 16px;
+  }
+
+  .modal-content .regla-card p {
+    font-size: 14px;
+  }
+}
+
+
