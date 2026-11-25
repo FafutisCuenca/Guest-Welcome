@@ -6,9 +6,12 @@
   "mensajeFinal": "Estaremos pendientes de tu llegada para recibirte. Durante toda tu estancia, tanto mi coanfitriona como yo estaremos disponibles por WhatsApp o a través de la aplicación para ayudarte en lo que necesites.",
   "fotoPrincipal": "img/alojamiento/image2.png",
   "fotosPortadaTV": [
-  "img/alojamiento/image2.png",
-  "img/alojamiento/image3.png",
-  "img/alojamiento/image5.jpeg"
+  "img/alojamiento/FotoPortada01.jpeg",
+  "img/alojamiento/FotoPortada02.jpeg",
+  "img/alojamiento/FotoPortada03.jpeg",
+  "img/alojamiento/FotoPortada04.jpeg",
+  "img/alojamiento/FotoPortada05.jpeg",
+  "img/alojamiento/FotoPortada06.jpeg"
   ],
   "anfitriona": {
     "nombre": "Alexandra Cuenca",
