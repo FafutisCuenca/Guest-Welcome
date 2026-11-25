@@ -117,11 +117,36 @@ button {
 }
 
 .tv-welcome-photo {
+  position: relative;
   min-height: 285px;
+  overflow: hidden;
   background-color: #142c2a;
+}
+
+/* Fotografías del carrusel */
+
+.tv-welcome-slide {
+  position: absolute;
+  inset: 0;
+
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.tv-welcome-slide.active {
+  opacity: 1;
+}
+
+/* Respeta la preferencia de movimiento reducido */
+
+@media (prefers-reduced-motion: reduce) {
+  .tv-welcome-slide {
+    transition: none;
+  }
 }
 
 .tv-welcome-content {
