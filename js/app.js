@@ -118,6 +118,7 @@ function limpiarNegritas(texto) {
   return texto.trim().replace(/^\*\*(.*?)\*\*$/, "$1");
 }
 
+
 function mostrar(s) {
   $("modalTitulo").textContent = s.titulo;
 
@@ -145,13 +146,30 @@ function mostrar(s) {
     red.append(icono, etiqueta, nombre, instruccion);
     c.append(red);
 
+  } else if (s.id === "faqs") {
+
+    // Preguntas frecuentes desplegables.
+    (s.preguntas || []).forEach(item => {
+      const detalle = document.createElement("details");
+      detalle.className = "faq-item";
+
+      const pregunta = document.createElement("summary");
+      pregunta.textContent = item.pregunta || "";
+
+      const respuesta = document.createElement("div");
+      respuesta.className = "faq-respuesta";
+      respuesta.textContent = item.respuesta || "";
+
+      detalle.append(pregunta, respuesta);
+      c.append(detalle);
+    });
+
   } else {
     const contenidos = s.contenido || [];
 
     for (let i = 0; i < contenidos.length; i++) {
       const texto = String(contenidos[i]).trim();
 
-      // Ignorar renglones vacíos.
       if (!texto) continue;
 
       // Referencias a Google Maps.
@@ -176,8 +194,7 @@ function mostrar(s) {
         continue;
       }
 
-      // Detectar títulos numerados y agruparlos
-      // automáticamente con sus descripciones.
+      // Títulos numerados y sus descripciones.
       if (esTituloRegla(texto)) {
         const tarjeta = document.createElement("div");
         tarjeta.className = "regla-card";
@@ -188,8 +205,6 @@ function mostrar(s) {
 
         tarjeta.append(titulo);
 
-        // Agrupar los textos siguientes hasta encontrar
-        // otro título numerado, subtítulo o enlace de mapa.
         i++;
 
         while (i < contenidos.length) {
@@ -221,7 +236,7 @@ function mostrar(s) {
         continue;
       }
 
-      // Avisos independientes escritos en negritas.
+      // Avisos independientes en negritas.
       if (esTextoEnNegritas(texto)) {
         const aviso = document.createElement("p");
         aviso.className = "note";
