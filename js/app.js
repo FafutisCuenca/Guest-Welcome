@@ -105,6 +105,19 @@ function crearEnlaceMapa(texto, contenedor) {
   }
 }
 
+
+function esTituloRegla(texto) {
+  return /^\*\*\s*\d+\.\s*.+?\*\*\s*$/.test(texto.trim());
+}
+
+function esTextoEnNegritas(texto) {
+  return /^\*\*.+?\*\*\s*$/.test(texto.trim());
+}
+
+function limpiarNegritas(texto) {
+  return texto.trim().replace(/^\*\*(.*?)\*\*$/, "$1");
+}
+
 function mostrar(s) {
   $("modalTitulo").textContent = s.titulo;
 
@@ -133,8 +146,13 @@ function mostrar(s) {
     c.append(red);
 
   } else {
-    (s.contenido || []).forEach((t, i) => {
-      const texto = String(t);
+    const contenidos = s.contenido || [];
+
+    for (let i = 0; i < contenidos.length; i++) {
+      const texto = String(contenidos[i]).trim();
+
+      // Ignorar renglones vacíos.
+      if (!texto) continue;
 
       // Referencias a Google Maps.
       if (texto.startsWith("MAPA|")) {
@@ -146,7 +164,7 @@ function mostrar(s) {
           c.append(p);
         }
 
-        return;
+        continue;
       }
 
       // Subtítulos destacados.
@@ -155,27 +173,80 @@ function mostrar(s) {
         h.className = "subtitulo-seccion";
         h.textContent = texto;
         c.append(h);
-        return;
+        continue;
+      }
+
+      // Detectar títulos numerados y agruparlos
+      // automáticamente con sus descripciones.
+      if (esTituloRegla(texto)) {
+        const tarjeta = document.createElement("div");
+        tarjeta.className = "regla-card";
+
+        const titulo = document.createElement("h4");
+        titulo.className = "regla-titulo";
+        titulo.textContent = limpiarNegritas(texto);
+
+        tarjeta.append(titulo);
+
+        // Agrupar los textos siguientes hasta encontrar
+        // otro título numerado, subtítulo o enlace de mapa.
+        i++;
+
+        while (i < contenidos.length) {
+          const siguiente = String(contenidos[i]).trim();
+
+          if (!siguiente) {
+            i++;
+            continue;
+          }
+
+          if (
+            esTituloRegla(siguiente) ||
+            esSubtitulo(siguiente) ||
+            siguiente.startsWith("MAPA|") ||
+            esTextoEnNegritas(siguiente)
+          ) {
+            i--;
+            break;
+          }
+
+          const descripcion = document.createElement("p");
+          descripcion.textContent = siguiente;
+          tarjeta.append(descripcion);
+
+          i++;
+        }
+
+        c.append(tarjeta);
+        continue;
+      }
+
+      // Avisos independientes escritos en negritas.
+      if (esTextoEnNegritas(texto)) {
+        const aviso = document.createElement("p");
+        aviso.className = "note";
+
+        const fuerte = document.createElement("strong");
+        fuerte.textContent = limpiarNegritas(texto);
+
+        aviso.append(fuerte);
+        c.append(aviso);
+        continue;
       }
 
       // Texto normal.
       const p = document.createElement("p");
       p.textContent = texto;
-
-      if (s.id === "acceso" && i === 1) {
-        p.className = "note";
-      }
-
       c.append(p);
-    });
+    }
   }
 
   // Galería de fotografías.
   if (s.imagenes?.length) {
-const g = document.createElement("div");
-g.className = s.id === "wifi"
-  ? "gallery wifi-gallery"
-  : "gallery";
+    const g = document.createElement("div");
+    g.className = s.id === "wifi"
+      ? "gallery wifi-gallery"
+      : "gallery";
 
     s.imagenes.forEach(im => {
       const el = document.createElement("img");
