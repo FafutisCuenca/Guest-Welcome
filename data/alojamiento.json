@@ -4,15 +4,33 @@
   "subtitulo": "Casa familiar en privada para descanso de fin de semana · Jiutepec, Mor.",
   "mensajeBienvenida": "Deseamos que disfruten cada momento de su estancia y que se lleven recuerdos maravillosos.",
   "mensajeFinal": "Estaremos pendientes de tu llegada para recibirte. Durante toda tu estancia, tanto mi coanfitriona como yo estaremos disponibles por WhatsApp o a través de la aplicación para ayudarte en lo que necesites.",
-  "fotoPrincipal": "img/alojamiento/image2.png",
+  "fotoPrincipal": "img/alojamiento/FotoPortada01.jpeg",
   "fotosPortadaTV": [
-  "img/alojamiento/FotoPortada01.jpeg",
-  "img/alojamiento/FotoPortada02.jpeg",
-  "img/alojamiento/FotoPortada03.jpeg",
-  "img/alojamiento/FotoPortada04.jpeg",
-  "img/alojamiento/FotoPortada05.jpeg",
-  "img/alojamiento/FotoPortada06.jpeg"
-  ],
+  {
+    "src": "img/alojamiento/FotoPortada01.jpeg",
+    "titulo": "Bienvenidos a nuestra casa"
+  },
+  {
+    "src": "img/alojamiento/FotoPortada02.jpeg",
+    "titulo": "Un espacio para descansar - Vista Jardín Interior"
+  },
+  {
+    "src": "img/alojamiento/FotoPortada03.jpeg",
+    "titulo": "Momentos para compartir - Alberca y Jardín"
+  },
+  {
+    "src": "img/alojamiento/FotoPortada04.jpeg",
+    "titulo": "Comodidad y descanso - Sala de TV"
+  },
+  {
+    "src": "img/alojamiento/FotoPortada05.jpeg",
+    "titulo": "Disfruta cada rincón - Estancia Sala - Comedor"
+  },
+  {
+    "src": "img/alojamiento/FotoPortada06.jpeg",
+    "titulo": "Que disfrutes una buena platica - Sala"
+  }
+],
   "anfitriona": {
     "nombre": "Alexandra Cuenca",
     "telefono": "55 3812 4380",
