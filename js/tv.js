@@ -42,6 +42,27 @@
     });
   }
 
+    async function actualizarTemperatura() {
+    const elemento = $("#temperatura");
+    if (!elemento) return;
+
+    try {
+      const respuesta = await fetch(
+        "https://api.open-meteo.com/v1/forecast?latitude=18.8814&longitude=-99.1775&current=temperature_2m&timezone=America%2FMexico_City"
+      );
+
+      if (!respuesta.ok) throw new Error("Clima no disponible");
+
+      const datos = await respuesta.json();
+
+      elemento.textContent =
+        `🌤️ ${Math.round(datos.current.temperature_2m)} °C · Jiutepec`;
+
+    } catch (error) {
+      elemento.textContent = "🌤️ Jiutepec";
+    }
+  }
+  
   function fechaLocal(valor) {
     if (!valor) return null;
 
