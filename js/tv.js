@@ -63,20 +63,38 @@
     }
   }
 
-  function iniciarCarruselPortada(datos) {
+ 
+function iniciarCarruselPortada(datos) {
   const contenedor = $("#fotoBienvenida");
   if (!contenedor) return;
 
+  // Lee fotografías con el formato nuevo (src y titulo).
+  // También admite el formato anterior de rutas como texto.
   const fotos = Array.isArray(datos.fotosPortadaTV)
-    ? datos.fotosPortadaTV.filter(
-        foto => typeof foto === "string" && foto.trim()
-      )
+    ? datos.fotosPortadaTV
+        .map(foto => {
+          if (typeof foto === "string") {
+            return { src: foto, titulo: "" };
+          }
+
+          if (foto && typeof foto.src === "string") {
+            return {
+              src: foto.src,
+              titulo: foto.titulo || ""
+            };
+          }
+
+          return null;
+        })
+        .filter(foto => foto && foto.src.trim())
     : [];
 
-  // Si no hay fotografías configuradas, utiliza la foto principal.
+  // Si no hay fotografías configuradas, usa la foto principal.
   const imagenes = fotos.length
     ? fotos
-    : [datos.fotoPrincipal].filter(Boolean);
+    : datos.fotoPrincipal
+      ? [{ src: datos.fotoPrincipal, titulo: "" }]
+      : [];
 
   contenedor.replaceChildren();
   contenedor.style.backgroundImage = "none";
@@ -84,12 +102,26 @@
   if (!imagenes.length) return;
 
   imagenes.forEach((foto, indice) => {
-    const diapositiva = crearElemento("div", "tv-welcome-slide");
+    const diapositiva = crearElemento(
+      "div",
+      "tv-welcome-slide"
+    );
 
     diapositiva.style.backgroundImage =
-      `url("${encodeURI(foto)}")`;
+      `url("${encodeURI(foto.src)}")`;
 
     diapositiva.setAttribute("aria-hidden", "true");
+
+    // Agrega el título correspondiente a la fotografía.
+    if (foto.titulo) {
+      const titulo = crearElemento(
+        "div",
+        "tv-welcome-caption",
+        foto.titulo
+      );
+
+      diapositiva.appendChild(titulo);
+    }
 
     if (indice === 0) {
       diapositiva.classList.add("active");
@@ -98,6 +130,7 @@
     contenedor.appendChild(diapositiva);
   });
 
+  // Si solamente hay una fotografía, no necesita temporizador.
   if (imagenes.length < 2) return;
 
   let actual = 0;
@@ -114,6 +147,7 @@
     diapositivas[actual].classList.add("active");
   }, 5000);
 }
+
   
   function fechaLocal(valor) {
     if (!valor) return null;
