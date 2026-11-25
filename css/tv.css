@@ -123,16 +123,14 @@ button {
   background-color: #142c2a;
 }
 
-/* Fotografías del carrusel */
+/* FOTOGRAFÍAS DEL CARRUSEL */
 
 .tv-welcome-slide {
   position: absolute;
   inset: 0;
-
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-
   opacity: 0;
   transition: opacity 1.2s ease-in-out;
 }
@@ -141,7 +139,23 @@ button {
   opacity: 1;
 }
 
-/* Respeta la preferencia de movimiento reducido */
+/* TÍTULO SOBRE CADA FOTOGRAFÍA */
+
+.tv-welcome-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 14px 18px;
+  color: #ffffff;
+  background: rgba(10, 25, 23, 0.78);
+  font-size: clamp(16px, 1.5vw, 22px);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+/* RESPETA LA PREFERENCIA DE MOVIMIENTO REDUCIDO */
 
 @media (prefers-reduced-motion: reduce) {
   .tv-welcome-slide {
@@ -505,7 +519,6 @@ button {
   border-radius: 10px;
 }
 
-
 /* CÓDIGO QR DE WIFI: IMAGEN COMPLETA Y CENTRADA */
 
 .tv-modal-content .tv-gallery.wifi-gallery {
@@ -528,28 +541,7 @@ button {
   padding: 8px;
 }
 
-
-/* CÓDIGO QR: VISUALIZACIÓN COMPLETA EN TELEVISIÓN */
-
-.tv-modal-content .tv-gallery.wifi-gallery {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 20px auto;
-}
-
-.tv-modal-content .tv-gallery.wifi-gallery img {
-  display: block;
-  width: 260px;
-  max-width: 45vw;
-  height: auto;
-  max-height: 42vh;
-  object-fit: contain;
-  border-radius: 10px;
-  background: #ffffff;
-  padding: 8px;
-}
+/* PIE DE VENTANAS */
 
 .tv-modal-footer {
   display: flex;
@@ -613,10 +605,7 @@ button {
   }
 }
 
-
-/* =========================================
-   AJUSTE DE TIPOGRAFÍA PARA SECCIONES DE TV
-   ========================================= */
+/* AJUSTE DE TIPOGRAFÍA PARA SECCIONES DE TV */
 
 /* Título superior de cada ventana */
 .tv-modal-header h2 {
@@ -653,6 +642,3 @@ button {
 .tv-modal-content {
   padding: 22px 32px;
 }
-
-
-
