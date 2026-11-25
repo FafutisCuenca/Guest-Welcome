@@ -533,3 +533,32 @@ footer {
 }
 
 
+/* =========================================
+   RECUADROS PARA REGLAS Y NORMAS
+   ========================================= */
+
+/* Cada regla numerada tendrá su propio bloque */
+.modal-content p:has(strong:first-child) {
+  margin: 14px 0;
+  padding: 15px 18px;
+  background: #f0f3ee;
+  border-left: 4px solid var(--green2);
+  border-radius: 8px;
+  line-height: 1.65;
+}
+
+/* Destacar el número y título de cada regla */
+.modal-content p strong:first-child {
+  color: var(--green);
+  font-weight: 800;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 480px) {
+  .modal-content p:has(strong:first-child) {
+    padding: 12px 14px;
+    margin: 11px 0;
+  }
+}
+
+
