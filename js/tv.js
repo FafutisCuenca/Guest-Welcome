@@ -314,8 +314,6 @@ const galeria = crearGaleria(seccion.imagenes, esWifi);
     }
   }
 
-  
-
 function cargarSecciones(datos) {
   const originales = Array.isArray(datos.secciones)
     ? datos.secciones
@@ -500,6 +498,9 @@ function cargarSecciones(datos) {
     actualizarReloj();
     setInterval(actualizarReloj, 1000);
 
+    actualizarTemperatura();
+    setInterval(actualizarTemperatura, 1800000);
+    
     botonCerrar.addEventListener("click", cerrarSeccion);
 
     document.addEventListener("keydown", manejarTeclado);
