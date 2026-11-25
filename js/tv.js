@@ -294,27 +294,33 @@ const galeria = crearGaleria(seccion.imagenes, esWifi);
   }
 
   
+
 function cargarSecciones(datos) {
   const originales = Array.isArray(datos.secciones)
     ? datos.secciones
     : [];
 
-  // Coloca primero las opciones de ayuda y emergencias.
+  // Orden de prioridad para las tarjetas de TV.
   secciones = [...originales].sort((a, b) => {
-    const textoA = `${a.titulo || ""} ${a.descripcion || ""}`
-      .toLocaleLowerCase("es-MX")
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "");
+    const normalizar = (texto) =>
+      `${texto || ""}`
+        .toLocaleLowerCase("es-MX")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
 
-    const textoB = `${b.titulo || ""} ${b.descripcion || ""}`
-      .toLocaleLowerCase("es-MX")
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "");
+    const prioridad = (seccion) => {
+      const texto = normalizar(
+        `${seccion.id || ""} ${seccion.titulo || ""} ${seccion.descripcion || ""}`
+      );
 
-    const prioridad = (texto) =>
-      /ayuda|emergencia/.test(texto) ? 0 : 1;
+      if (/bienvenida|welcome/.test(texto)) return 0;
+      if (/emergencia/.test(texto)) return 1;
+      if (/ayuda/.test(texto)) return 2;
 
-    return prioridad(textoA) - prioridad(textoB);
+      return 3;
+    };
+
+    return prioridad(a) - prioridad(b);
   });
 
   menu.replaceChildren();
