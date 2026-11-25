@@ -313,6 +313,40 @@
         "Coanfitriona: Teresita Castillo",
         "Yo, o mi coanfitriona, estaremos allí cuando llegues y permaneceremos disponibles por WhatsApp durante tu estadía."
       ]
+    },
+    
+{
+  "id": "faqs",
+  "icono": "❓",
+  "titulo": "Preguntas frecuentes",
+  "descripcion": "Respuestas rápidas para ayudarte durante tu estancia.",
+  "preguntas": [
+    {
+      "pregunta": "¿Cómo puedo conectarme al Wi-Fi?",
+      "respuesta": "La red disponible en la casa es INFINITUMAAFA. Por seguridad, la contraseña no se publica en esta guía. Puedes solicitarla directamente a la anfitriona o consultar el código QR que se encuentra en el interior de la casa."
+    },
+    {
+      "pregunta": "¿Cómo abro y cierro el portón del fraccionamiento?",
+      "respuesta": "Al llegar te entregaremos un control remoto para abrir y cerrar el portón principal. Presiona una sola vez el botón superior y espera a que termine completamente su movimiento. No presiones repetidamente el botón. Antes de continuar tu camino, verifica que el portón haya quedado completamente cerrado. Recuerda devolver el control al finalizar tu estancia."
+    },
+    {
+      "pregunta": "¿Dónde puedo estacionar mi vehículo?",
+      "respuesta": "Debes utilizar exclusivamente el espacio de estacionamiento asignado a nuestra vivienda. Está prohibido estacionarse en los cajones correspondientes a otras casas. Por favor, respeta las indicaciones del fraccionamiento y no utilices el acceso vehicular como entrada o salida peatonal."
+    },
+    {
+      "pregunta": "¿Qué debo hacer si tengo algún problema con algún servicio de la casa?",
+      "respuesta": "Si algún servicio, equipo o instalación de la casa no funciona correctamente, te pedimos que nos informes lo antes posible. Describe brevemente qué sucede y, si es posible, envíanos una fotografía o video para ayudarnos a identificar el problema. Por seguridad, evita intentar reparaciones por tu cuenta."
+    },
+    {
+      "pregunta": "¿A quién puedo contactar si necesito ayuda?",
+      "respuesta": "Si tienes alguna duda, necesitas asistencia o se presenta cualquier situación durante tu estancia, puedes comunicarte con la anfitriona mediante el botón de WhatsApp disponible en esta guía. Con gusto te atenderemos y te ayudaremos a resolverlo."
+    },
+    {
+      "pregunta": "¿Qué debo hacer antes de retirarme?",
+      "respuesta": "Antes de salir, consulta la sección «Recomendaciones antes de retirarte» de esta guía y sigue las indicaciones correspondientes. No olvides revisar que llevas todas tus pertenencias, apagar las luces y los equipos que hayas utilizado, cerrar puertas y ventanas, y devolver el control remoto del portón. ¡Te agradecemos mucho tu visita!"
     }
+  ]
+}
+
   ]
 }
