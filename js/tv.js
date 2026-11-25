@@ -13,6 +13,7 @@
   let secciones = [];
   let tarjetaAnterior = null;
   let modalAbierto = false;
+  let temporizadorCarrusel = null;
 
   const params = new URLSearchParams(window.location.search);
 
@@ -25,25 +26,41 @@
     return elemento;
   }
 
+  /* =========================================
+     RELOJ Y FECHA
+     ========================================= */
+
   function actualizarReloj() {
     const ahora = new Date();
 
-    $("#reloj").textContent = ahora.toLocaleTimeString("es-MX", {
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: false
-    });
+    const reloj = $("#reloj");
+    const fecha = $("#fechaActual");
 
-    $("#fechaActual").textContent = ahora.toLocaleDateString("es-MX", {
-      weekday: "long",
-      day: "numeric",
-      month: "long",
-      year: "numeric"
-    });
+    if (reloj) {
+      reloj.textContent = ahora.toLocaleTimeString("es-MX", {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false
+      });
+    }
+
+    if (fecha) {
+      fecha.textContent = ahora.toLocaleDateString("es-MX", {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      });
+    }
   }
 
-    async function actualizarTemperatura() {
+  /* =========================================
+     TEMPERATURA DE JIUTEPEC
+     ========================================= */
+
+  async function actualizarTemperatura() {
     const elemento = $("#temperatura");
+
     if (!elemento) return;
 
     try {
@@ -51,104 +68,135 @@
         "https://api.open-meteo.com/v1/forecast?latitude=18.8814&longitude=-99.1775&current=temperature_2m&timezone=America%2FMexico_City"
       );
 
-      if (!respuesta.ok) throw new Error("Clima no disponible");
+      if (!respuesta.ok) {
+        throw new Error("Clima no disponible");
+      }
 
       const datos = await respuesta.json();
+      const temperatura = datos.current?.temperature_2m;
+
+      if (typeof temperatura !== "number") {
+        throw new Error("Temperatura no disponible");
+      }
 
       elemento.textContent =
-        `🌤️ ${Math.round(datos.current.temperature_2m)} °C · Jiutepec`;
+        `🌤️ ${Math.round(temperatura)} °C · Jiutepec`;
 
     } catch (error) {
       elemento.textContent = "🌤️ Jiutepec";
     }
   }
 
- 
-function iniciarCarruselPortada(datos) {
-  const contenedor = $("#fotoBienvenida");
-  if (!contenedor) return;
+  /* =========================================
+     CARRUSEL DE FOTOGRAFÍAS DE PORTADA
+     ========================================= */
 
-  // Lee fotografías con el formato nuevo (src y titulo).
-  // También admite el formato anterior de rutas como texto.
-  const fotos = Array.isArray(datos.fotosPortadaTV)
-    ? datos.fotosPortadaTV
-        .map(foto => {
-          if (typeof foto === "string") {
-            return { src: foto, titulo: "" };
-          }
+  function iniciarCarruselPortada(datos) {
+    const contenedor = $("#fotoBienvenida");
 
-          if (foto && typeof foto.src === "string") {
-            return {
-              src: foto.src,
-              titulo: foto.titulo || ""
-            };
-          }
+    if (!contenedor) return;
 
-          return null;
-        })
-        .filter(foto => foto && foto.src.trim())
-    : [];
+    // Evita duplicar el temporizador si se reinicia el carrusel.
+    if (temporizadorCarrusel) {
+      clearInterval(temporizadorCarrusel);
+      temporizadorCarrusel = null;
+    }
 
-  // Si no hay fotografías configuradas, usa la foto principal.
-  const imagenes = fotos.length
-    ? fotos
-    : datos.fotoPrincipal
-      ? [{ src: datos.fotoPrincipal, titulo: "" }]
+    // Admite el formato anterior (texto) y el nuevo (src y titulo).
+    const fotos = Array.isArray(datos.fotosPortadaTV)
+      ? datos.fotosPortadaTV
+          .map((foto) => {
+            if (typeof foto === "string") {
+              return {
+                src: foto,
+                titulo: ""
+              };
+            }
+
+            if (foto && typeof foto.src === "string") {
+              return {
+                src: foto.src,
+                titulo:
+                  typeof foto.titulo === "string"
+                    ? foto.titulo
+                    : ""
+              };
+            }
+
+            return null;
+          })
+          .filter((foto) => foto && foto.src.trim())
       : [];
 
-  contenedor.replaceChildren();
-  contenedor.style.backgroundImage = "none";
+    // Si no hay fotografías configuradas, utiliza la foto principal.
+    const imagenes = fotos.length
+      ? fotos
+      : datos.fotoPrincipal
+        ? [{
+            src: datos.fotoPrincipal,
+            titulo: ""
+          }]
+        : [];
 
-  if (!imagenes.length) return;
+    contenedor.replaceChildren();
+    contenedor.style.backgroundImage = "none";
 
-  imagenes.forEach((foto, indice) => {
-    const diapositiva = crearElemento(
-      "div",
-      "tv-welcome-slide"
-    );
+    if (!imagenes.length) return;
 
-    diapositiva.style.backgroundImage =
-      `url("${encodeURI(foto.src)}")`;
-
-    diapositiva.setAttribute("aria-hidden", "true");
-
-    // Agrega el título correspondiente a la fotografía.
-    if (foto.titulo) {
-      const titulo = crearElemento(
+    imagenes.forEach((foto, indice) => {
+      const diapositiva = crearElemento(
         "div",
-        "tv-welcome-caption",
-        foto.titulo
+        "tv-welcome-slide"
       );
 
-      diapositiva.appendChild(titulo);
-    }
+      diapositiva.style.backgroundImage =
+        `url("${encodeURI(foto.src)}")`;
 
-    if (indice === 0) {
-      diapositiva.classList.add("active");
-    }
+      diapositiva.setAttribute("aria-hidden", "true");
 
-    contenedor.appendChild(diapositiva);
-  });
+      // Muestra el título de la fotografía cuando está configurado.
+      if (foto.titulo) {
+        const titulo = crearElemento(
+          "div",
+          "tv-welcome-caption",
+          foto.titulo
+        );
 
-  // Si solamente hay una fotografía, no necesita temporizador.
-  if (imagenes.length < 2) return;
+        diapositiva.appendChild(titulo);
+      }
 
-  let actual = 0;
+      if (indice === 0) {
+        diapositiva.classList.add("active");
+      }
 
-  setInterval(() => {
-    const diapositivas = contenedor.querySelectorAll(
-      ".tv-welcome-slide"
-    );
+      contenedor.appendChild(diapositiva);
+    });
 
-    diapositivas[actual].classList.remove("active");
+    // Una sola fotografía no necesita rotación automática.
+    if (imagenes.length < 2) return;
 
-    actual = (actual + 1) % diapositivas.length;
+    let actual = 0;
 
-    diapositivas[actual].classList.add("active");
-  }, 5000);
-}
+    temporizadorCarrusel = setInterval(() => {
+      const diapositivas = contenedor.querySelectorAll(
+        ".tv-welcome-slide"
+      );
 
-  
+      if (diapositivas.length < 2) return;
+
+      diapositivas[actual].classList.remove("active");
+
+      actual = (actual + 1) % diapositivas.length;
+
+      diapositivas[actual].classList.add("active");
+
+    }, 5000);
+  }
+
+  /* =========================================
+     FECHAS DE ESTANCIA
+     ========================================= */
+
   function fechaLocal(valor) {
     if (!valor) return null;
 
@@ -178,14 +226,23 @@ function iniciarCarruselPortada(datos) {
     const salida = fechaLocal(params.get("salida"));
     const contenedor = $("#datosEstancia");
 
+    if (!contenedor) return;
+
     contenedor.replaceChildren();
 
     if (!llegada && !salida) return;
 
     function agregarDato(etiqueta, valor) {
       const item = crearElemento("div", "tv-stay-item");
-      item.appendChild(crearElemento("span", "", etiqueta));
-      item.appendChild(crearElemento("strong", "", valor));
+
+      item.appendChild(
+        crearElemento("span", "", etiqueta)
+      );
+
+      item.appendChild(
+        crearElemento("strong", "", valor)
+      );
+
       contenedor.appendChild(item);
     }
 
@@ -198,7 +255,10 @@ function iniciarCarruselPortada(datos) {
     }
 
     if (llegada && salida && salida >= llegada) {
-      const dias = Math.round((salida - llegada) / 86400000);
+      const dias = Math.round(
+        (salida - llegada) / 86400000
+      );
+
       const duracion = crearElemento(
         "div",
         "tv-stay-duration",
@@ -209,30 +269,41 @@ function iniciarCarruselPortada(datos) {
     }
   }
 
+  /* =========================================
+     PERSONALIZACIÓN DE BIENVENIDA
+     ========================================= */
+
   function personalizarBienvenida(datos) {
     const nombre = params.get("huesped");
     const plural = params.get("plural") === "1";
 
-    $("#nombreCasa").textContent = datos.nombre || "NUESTRA CASA";
+    $("#nombreCasa").textContent =
+      datos.nombre || "NUESTRA CASA";
 
     if (nombre) {
       $("#saludo").textContent = plural
         ? `¡Bienvenidos, ${nombre}!`
         : `¡Bienvenido(a), ${nombre}!`;
     } else {
-      $("#saludo").textContent = "¡Bienvenidos a nuestra casa!";
+      $("#saludo").textContent =
+        "¡Bienvenidos a nuestra casa!";
     }
 
     $("#mensajeBienvenida").textContent =
       datos.mensajeBienvenida ||
       "Deseamos que disfruten cada momento de su estancia.";
 
-    $("#mensajeFinal").textContent = datos.mensajeFinal || "";
+    $("#mensajeFinal").textContent =
+      datos.mensajeFinal || "";
 
     iniciarCarruselPortada(datos);
 
     mostrarEstancia();
   }
+
+  /* =========================================
+     CONSTRUCCIÓN DEL MENÚ
+     ========================================= */
 
   function esSubtitulo(texto) {
     if (!texto || texto.length > 90) return false;
@@ -245,6 +316,7 @@ function iniciarCarruselPortada(datos) {
 
   function crearTarjeta(seccion, indice) {
     const tarjeta = crearElemento("button", "tv-card");
+
     tarjeta.type = "button";
     tarjeta.dataset.indice = indice;
 
@@ -254,10 +326,17 @@ function iniciarCarruselPortada(datos) {
       seccion.icono || "ℹ️"
     );
 
-    const texto = crearElemento("span", "tv-card-text");
+    const texto = crearElemento(
+      "span",
+      "tv-card-text"
+    );
 
     texto.appendChild(
-      crearElemento("span", "tv-card-title", seccion.titulo || "Información")
+      crearElemento(
+        "span",
+        "tv-card-title",
+        seccion.titulo || "Información"
+      )
     );
 
     texto.appendChild(
@@ -277,28 +356,40 @@ function iniciarCarruselPortada(datos) {
     return tarjeta;
   }
 
+  /* =========================================
+     GALERÍAS DE FOTOGRAFÍAS
+     ========================================= */
 
-function crearGaleria(imagenes, esWifi = false) {
-  if (!Array.isArray(imagenes) || !imagenes.length) return null;
+  function crearGaleria(imagenes, esWifi = false) {
+    if (!Array.isArray(imagenes) || !imagenes.length) {
+      return null;
+    }
 
-  const galeria = crearElemento(
-    "div",
-    esWifi ? "tv-gallery wifi-gallery" : "tv-gallery"
-  );
+    const galeria = crearElemento(
+      "div",
+      esWifi
+        ? "tv-gallery wifi-gallery"
+        : "tv-gallery"
+    );
 
-  imagenes.forEach((imagen) => {
-    if (!imagen || !imagen.src) return;
+    imagenes.forEach((imagen) => {
+      if (!imagen || !imagen.src) return;
 
-    const img = document.createElement("img");
-    img.src = encodeURI(imagen.src);
-    img.alt = imagen.alt || "Fotografía de la casa";
-    img.loading = "lazy";
+      const img = document.createElement("img");
 
-    galeria.appendChild(img);
-  });
+      img.src = encodeURI(imagen.src);
+      img.alt = imagen.alt || "Fotografía de la casa";
+      img.loading = "lazy";
 
-  return galeria.children.length ? galeria : null;
-}
+      galeria.appendChild(img);
+    });
+
+    return galeria.children.length ? galeria : null;
+  }
+
+  /* =========================================
+     CONTENIDO DE LAS SECCIONES
+     ========================================= */
 
   function crearContenido(seccion) {
     const fragmento = document.createDocumentFragment();
@@ -312,6 +403,7 @@ function crearGaleria(imagenes, esWifi = false) {
 
       if (linea.startsWith("MAPA|")) {
         const partes = linea.split("|");
+
         const nombre = partes[1] || "Ver ubicación";
         const url = partes.slice(2).join("|");
 
@@ -338,6 +430,7 @@ function crearGaleria(imagenes, esWifi = false) {
 
             fragmento.appendChild(enlace);
           }
+
         } catch (error) {
           // Se omite cualquier enlace que no sea válido.
         }
@@ -346,14 +439,23 @@ function crearGaleria(imagenes, esWifi = false) {
       }
 
       if (esSubtitulo(linea)) {
-        fragmento.appendChild(crearElemento("h3", "", linea));
+        fragmento.appendChild(
+          crearElemento("h3", "", linea)
+        );
       } else {
-        fragmento.appendChild(crearElemento("p", "", linea));
+        fragmento.appendChild(
+          crearElemento("p", "", linea)
+        );
       }
     });
 
- const esWifi = (seccion.id || "").toLowerCase() === "wifi";
-const galeria = crearGaleria(seccion.imagenes, esWifi);
+    const esWifi =
+      (seccion.id || "").toLowerCase() === "wifi";
+
+    const galeria = crearGaleria(
+      seccion.imagenes,
+      esWifi
+    );
 
     if (galeria) {
       fragmento.appendChild(galeria);
@@ -362,19 +464,29 @@ const galeria = crearGaleria(seccion.imagenes, esWifi);
     return fragmento;
   }
 
+  /* =========================================
+     APERTURA Y CIERRE DE VENTANAS
+     ========================================= */
+
   function abrirSeccion(indice, tarjeta) {
     const seccion = secciones[indice];
 
     if (!seccion) return;
 
     tarjetaAnterior = tarjeta || document.activeElement;
-    modalTitulo.textContent = `${seccion.icono || ""} ${seccion.titulo || "Información"}`;
+
+    modalTitulo.textContent =
+      `${seccion.icono || ""} ${seccion.titulo || "Información"}`;
 
     modalContenido.replaceChildren();
-    modalContenido.appendChild(crearContenido(seccion));
+
+    modalContenido.appendChild(
+      crearContenido(seccion)
+    );
 
     modal.classList.add("open");
     modal.setAttribute("aria-hidden", "false");
+
     modalAbierto = true;
 
     requestAnimationFrame(() => {
@@ -388,6 +500,7 @@ const galeria = crearGaleria(seccion.imagenes, esWifi);
 
     modal.classList.remove("open");
     modal.setAttribute("aria-hidden", "true");
+
     modalAbierto = false;
 
     if (tarjetaAnterior && tarjetaAnterior.isConnected) {
@@ -395,47 +508,62 @@ const galeria = crearGaleria(seccion.imagenes, esWifi);
     }
   }
 
-function cargarSecciones(datos) {
-  const originales = Array.isArray(datos.secciones)
-    ? datos.secciones
-    : [];
+  /* =========================================
+     CARGA Y ORDEN DE SECCIONES
+     ========================================= */
 
-  // Orden de prioridad para las tarjetas de TV.
-  secciones = [...originales].sort((a, b) => {
-    const normalizar = (texto) =>
-      `${texto || ""}`
-        .toLocaleLowerCase("es-MX")
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "");
+  function cargarSecciones(datos) {
+    const originales = Array.isArray(datos.secciones)
+      ? datos.secciones
+      : [];
 
-    const prioridad = (seccion) => {
-      const texto = normalizar(
-        `${seccion.id || ""} ${seccion.titulo || ""} ${seccion.descripcion || ""}`
+    // Orden de prioridad para las tarjetas de TV.
+    secciones = [...originales].sort((a, b) => {
+      const normalizar = (texto) =>
+        `${texto || ""}`
+          .toLocaleLowerCase("es-MX")
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "");
+
+      const prioridad = (seccion) => {
+        const texto = normalizar(
+          `${seccion.id || ""} ${seccion.titulo || ""} ${seccion.descripcion || ""}`
+        );
+
+        if (/bienvenida|welcome/.test(texto)) return 0;
+        if (/emergencia/.test(texto)) return 1;
+        if (/ayuda/.test(texto)) return 2;
+
+        return 3;
+      };
+
+      return prioridad(a) - prioridad(b);
+    });
+
+    menu.replaceChildren();
+
+    if (!secciones.length) {
+      menu.appendChild(
+        crearElemento(
+          "p",
+          "tv-loading",
+          "No hay secciones disponibles."
+        )
       );
 
-      if (/bienvenida|welcome/.test(texto)) return 0;
-      if (/emergencia/.test(texto)) return 1;
-      if (/ayuda/.test(texto)) return 2;
+      return;
+    }
 
-      return 3;
-    };
-
-    return prioridad(a) - prioridad(b);
-  });
-
-  menu.replaceChildren();
-
-  if (!secciones.length) {
-    menu.appendChild(
-      crearElemento("p", "tv-loading", "No hay secciones disponibles.")
-    );
-    return;
+    secciones.forEach((seccion, indice) => {
+      menu.appendChild(
+        crearTarjeta(seccion, indice)
+      );
+    });
   }
 
-  secciones.forEach((seccion, indice) => {
-    menu.appendChild(crearTarjeta(seccion, indice));
-  });
-}
+  /* =========================================
+     NAVEGACIÓN CON CONTROL REMOTO
+     ========================================= */
 
   function elementoEnFoco() {
     const elemento = document.activeElement;
@@ -443,7 +571,9 @@ function cargarSecciones(datos) {
     if (
       !elemento ||
       elemento === document.body ||
-      !elemento.matches("button, a, [tabindex='0']")
+      !elemento.matches(
+        "button, a, [tabindex='0']"
+      )
     ) {
       return null;
     }
@@ -458,10 +588,17 @@ function cargarSecciones(datos) {
 
     if (modalAbierto && actual === modalContenido) {
       if (direccion === "down") {
-        modalContenido.scrollBy({ top: 160, behavior: "smooth" });
+        modalContenido.scrollBy({
+          top: 160,
+          behavior: "smooth"
+        });
       } else if (direccion === "up") {
-        modalContenido.scrollBy({ top: -160, behavior: "smooth" });
+        modalContenido.scrollBy({
+          top: -160,
+          behavior: "smooth"
+        });
       }
+
       return;
     }
 
@@ -469,6 +606,7 @@ function cargarSecciones(datos) {
       if (direccion === "down") {
         modalContenido.focus();
       }
+
       return;
     }
 
@@ -477,10 +615,14 @@ function cargarSecciones(datos) {
         "button:not(:disabled), a[href], [tabindex='0']"
       )
     ).filter((elemento) => {
-      return elemento !== actual && elemento.offsetParent !== null;
+      return (
+        elemento !== actual &&
+        elemento.offsetParent !== null
+      );
     });
 
     const rectActual = actual.getBoundingClientRect();
+
     const centroActual = {
       x: rectActual.left + rectActual.width / 2,
       y: rectActual.top + rectActual.height / 2
@@ -494,17 +636,24 @@ function cargarSecciones(datos) {
     };
 
     const vector = vectores[direccion];
+
     let mejor = null;
     let mejorPuntuacion = Infinity;
 
     candidatos.forEach((candidato) => {
       const rect = candidato.getBoundingClientRect();
 
-      const dx = rect.left + rect.width / 2 - centroActual.x;
-      const dy = rect.top + rect.height / 2 - centroActual.y;
+      const dx =
+        rect.left + rect.width / 2 - centroActual.x;
 
-      const avance = dx * vector.x + dy * vector.y;
-      const lateral = Math.abs(dx * vector.y - dy * vector.x);
+      const dy =
+        rect.top + rect.height / 2 - centroActual.y;
+
+      const avance =
+        dx * vector.x + dy * vector.y;
+
+      const lateral =
+        Math.abs(dx * vector.y - dy * vector.x);
 
       if (avance <= 0) return;
 
@@ -518,12 +667,17 @@ function cargarSecciones(datos) {
 
     if (mejor) {
       mejor.focus();
+
     } else if (!modalAbierto) {
-      const tarjetas = Array.from(menu.querySelectorAll(".tv-card"));
+      const tarjetas = Array.from(
+        menu.querySelectorAll(".tv-card")
+      );
+
       const indice = tarjetas.indexOf(actual);
 
       if (direccion === "left" && indice === 0) {
         tarjetas[tarjetas.length - 1]?.focus();
+
       } else if (
         direccion === "right" &&
         indice === tarjetas.length - 1
@@ -543,7 +697,11 @@ function cargarSecciones(datos) {
 
     if (teclasFlecha[evento.key]) {
       evento.preventDefault();
-      navegarFlechas(teclasFlecha[evento.key]);
+
+      navegarFlechas(
+        teclasFlecha[evento.key]
+      );
+
       return;
     }
 
@@ -558,10 +716,14 @@ function cargarSecciones(datos) {
         evento.preventDefault();
         cerrarSeccion();
       }
+
       return;
     }
 
-    if (evento.key === "Enter" || evento.key === " ") {
+    if (
+      evento.key === "Enter" ||
+      evento.key === " "
+    ) {
       const actual = elementoEnFoco();
 
       if (actual && actual.tagName === "A") {
@@ -575,16 +737,26 @@ function cargarSecciones(datos) {
     }
   }
 
+  /* =========================================
+     INICIO DE LA APLICACIÓN
+     ========================================= */
+
   async function iniciar() {
     actualizarReloj();
     setInterval(actualizarReloj, 1000);
 
     actualizarTemperatura();
     setInterval(actualizarTemperatura, 1800000);
-    
-    botonCerrar.addEventListener("click", cerrarSeccion);
 
-    document.addEventListener("keydown", manejarTeclado);
+    botonCerrar.addEventListener(
+      "click",
+      cerrarSeccion
+    );
+
+    document.addEventListener(
+      "keydown",
+      manejarTeclado
+    );
 
     modal.addEventListener("click", (evento) => {
       if (evento.target === modal) {
@@ -593,12 +765,17 @@ function cargarSecciones(datos) {
     });
 
     try {
-      const respuesta = await fetch("data/alojamiento.json", {
-        cache: "no-cache"
-      });
+      const respuesta = await fetch(
+        "data/alojamiento.json",
+        {
+          cache: "no-cache"
+        }
+      );
 
       if (!respuesta.ok) {
-        throw new Error("No se pudo cargar alojamiento.json");
+        throw new Error(
+          "No se pudo cargar alojamiento.json"
+        );
       }
 
       const datos = await respuesta.json();
@@ -609,8 +786,12 @@ function cargarSecciones(datos) {
       requestAnimationFrame(() => {
         menu.querySelector(".tv-card")?.focus();
       });
+
     } catch (error) {
-      console.error("Error al cargar la guía de TV:", error);
+      console.error(
+        "Error al cargar la guía de TV:",
+        error
+      );
 
       menu.replaceChildren(
         crearElemento(
@@ -622,5 +803,9 @@ function cargarSecciones(datos) {
     }
   }
 
-  document.addEventListener("DOMContentLoaded", iniciar);
+  document.addEventListener(
+    "DOMContentLoaded",
+    iniciar
+  );
+
 })();
