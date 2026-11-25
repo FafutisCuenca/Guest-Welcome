@@ -62,6 +62,58 @@
       elemento.textContent = "🌤️ Jiutepec";
     }
   }
+
+  function iniciarCarruselPortada(datos) {
+  const contenedor = $("#fotoBienvenida");
+  if (!contenedor) return;
+
+  const fotos = Array.isArray(datos.fotosPortadaTV)
+    ? datos.fotosPortadaTV.filter(
+        foto => typeof foto === "string" && foto.trim()
+      )
+    : [];
+
+  // Si no hay fotografías configuradas, utiliza la foto principal.
+  const imagenes = fotos.length
+    ? fotos
+    : [datos.fotoPrincipal].filter(Boolean);
+
+  contenedor.replaceChildren();
+  contenedor.style.backgroundImage = "none";
+
+  if (!imagenes.length) return;
+
+  imagenes.forEach((foto, indice) => {
+    const diapositiva = crearElemento("div", "tv-welcome-slide");
+
+    diapositiva.style.backgroundImage =
+      `url("${encodeURI(foto)}")`;
+
+    diapositiva.setAttribute("aria-hidden", "true");
+
+    if (indice === 0) {
+      diapositiva.classList.add("active");
+    }
+
+    contenedor.appendChild(diapositiva);
+  });
+
+  if (imagenes.length < 2) return;
+
+  let actual = 0;
+
+  setInterval(() => {
+    const diapositivas = contenedor.querySelectorAll(
+      ".tv-welcome-slide"
+    );
+
+    diapositivas[actual].classList.remove("active");
+
+    actual = (actual + 1) % diapositivas.length;
+
+    diapositivas[actual].classList.add("active");
+  }, 5000);
+}
   
   function fechaLocal(valor) {
     if (!valor) return null;
@@ -143,12 +195,7 @@
 
     $("#mensajeFinal").textContent = datos.mensajeFinal || "";
 
-    const foto = datos.fotoPrincipal;
-
-    if (foto) {
-      $("#fotoBienvenida").style.backgroundImage =
-        `url("${encodeURI(foto)}")`;
-    }
+    iniciarCarruselPortada(datos);
 
     mostrarEstancia();
   }
