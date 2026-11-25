@@ -1,6 +1,6 @@
 # GUEST WELCOME · Nuestra Casa, Cuernavaca
 
-Versión adaptada de la guía original `Borrador Guia AirBnb v2.docx`. Se conservaron los textos recuperables y todas las imágenes incrustadas del documento.
+Versión adaptada de la guía original. Se conservaron los textos recuperables y todas las imágenes incrustadas del documento.
 
 ## Publicación
 1. Descomprime este paquete.
@@ -18,4 +18,7 @@ Versión adaptada de la guía original `Borrador Guia AirBnb v2.docx`. Se conser
 El sitio GitHub Pages es público. El teléfono de contacto ya aparecía en la guía y se conserva en la versión; publica el sitio solo si estás de acuerdo con que sea visible para cualquiera que conozca la dirección. No agregues contraseñas Wi-Fi, códigos de cerraduras ni claves del portón al JSON público. Las instrucciones del control se mantienen en la guía tal como aparecen en el documento.
 
 ## Datos no incluidos
-La guía entregada no contiene datos de Wi-Fi, recomendaciones de restaurantes, servicios cercanos, atracciones, ni números de emergencia específicos; por eso no se inventaron ni se agregaron.
+La guía entregada no contiene datos de Wi-Fi, por eso no se inventaron ni se agregaron.
+
+## Información incluidad
+Recomendaciones de restaurantes, servicios cercanos, atracciones, y números de emergencia específicos.
