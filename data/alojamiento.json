@@ -39,13 +39,35 @@
     {
       "id": "acceso",
       "icono": "🚗",
-      "titulo": "Acceso al estacionamiento",
+      "titulo": "Acceso al fraccionamiento y uso del estacionamiento",
       "descripcion": "Indicaciones para entrar y salir de la privada.",
       "contenido": [
-        "Al llegar, te entregaremos un control remoto para abrir el portón principal del fraccionamiento.",
-        "Para abrir o cerrar el portón, presiona una sola vez el botón superior del control y espera a que termine de abrirse o cerrarse.",
-        "Por seguridad, verifica que el portón quede completamente cerrado al entrar y al salir.",
-        "No te detengas ni estaciones a la mitad del portón para evitar accidentes o daños a tu vehículo. Cualquier daño ocasionado por un uso inadecuado del portón deberá ser cubierto por el visitante responsable. No nos hacemos responsables de los incidentes provocados por los visitantes."
+"Para garantizar la seguridad de todos y mantener una buena convivencia con nuestros vecinos, les pedimos respetar las siguientes reglas durante su estancia:",
+
+"**1. Control remoto del portón**  ",
+"Al llegar, te entregaremos un control remoto para abrir y cerrar el portón principal del fraccionamiento. Deberás devolverlo al finalizar tu estancia.",
+        
+"**2. Uso correcto del control**  ",
+"Para abrir o cerrar el portón, presiona una sola vez el botón superior del control y espera a que termine completamente su movimiento. No presiones repetidamente el botón.",
+        
+"**3. Verifica que el portón cierre**  ",
+"Por seguridad, asegúrate de que el portón quede completamente cerrado cada vez que entres o salgas del fraccionamiento.",
+"",
+"**4. No obstruyas el portón**  ",
+"No te detengas ni estaciones sobre o a la mitad del portón. Esta acción puede ocasionar accidentes o daños a tu vehículo y a las instalaciones.",
+
+"**5. Responsabilidad por daños**  ",
+"Cualquier daño ocasionado al portón o a las instalaciones por el uso inadecuado del control o por una maniobra imprudente será responsabilidad del visitante que lo ocasione, quien deberá cubrir los gastos correspondientes.",
+
+"**6. Respeta los espacios de estacionamiento**  ",
+"Está estrictamente prohibido estacionarse en los cajones asignados a otras casas. Utiliza únicamente el espacio de estacionamiento correspondiente a nuestra vivienda.",
+
+"**7. Acceso peatonal**  ",
+"No utilices el acceso vehicular ni el portón principal como entrada o salida peatonal. Respeta los accesos destinados para peatones y las disposiciones del fraccionamiento.",
+
+"**El cumplimiento de estas reglas es obligatorio.** Agradecemos tu colaboración y comprensión para evitar inconvenientes con nuestros vecinos y contribuir a una estancia segura y agradable para todos.",
+
+"¡Muchas gracias!"
       ]
     },
     {
